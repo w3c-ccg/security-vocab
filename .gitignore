@@ -2,3 +2,5 @@
 *~
 .DS_Store
 TAGS
+dist
+node_modules
