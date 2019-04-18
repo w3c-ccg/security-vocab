@@ -3,6 +3,11 @@
   "version": "2.0.1-0",
   "description": "Security Context",
   "main": "js",
+  "browser": {
+    "./js/index.js": "./js/browser.js",
+    "./contexts/security-v1.json": "./contexts/security-v1.jsonld",
+    "./contexts/security-v2.json": "./contexts/security-v2.jsonld"
+  },
   "files": [
     "contexts",
     "js"
