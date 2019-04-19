@@ -2,7 +2,7 @@
 
 ## 3.0.0 - 2019-xx-xx
 
-### Addded
+### Added
 - Build and distribute static browser version with all contexts.
 - Export a `contexts` Map associating ids to contexts.
 
