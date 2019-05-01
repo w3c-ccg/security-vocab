@@ -1,8 +1,10 @@
 'use strict';
 
+const {constants} = require('./constants');
 const fs = require('fs');
 const path = require('path');
 
+exports.constants = constants;
 const contexts = exports.contexts = new Map();
 
 function _read(_path) {
@@ -13,8 +15,8 @@ function _read(_path) {
 }
 
 contexts.set(
-  'https://w3id.org/security/v1',
+  constants.SECURITY_CONTEXT_V1_URL,
   _read('../contexts/security-v1.jsonld'));
 contexts.set(
-  'https://w3id.org/security/v2',
+  constants.SECURITY_CONTEXT_V2_URL,
   _read('../contexts/security-v2.jsonld'));
