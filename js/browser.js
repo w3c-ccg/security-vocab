@@ -1,7 +1,7 @@
 'use strict';
 
-import {constants} from './constants.js';
-const contexts = new Map();
+const contexts = exports.contexts = new Map();
+const constants = exports.constants = require('./constants.js');
 
 contexts.set(
   constants.SECURITY_CONTEXT_V1_URL,
@@ -9,5 +9,3 @@ contexts.set(
 contexts.set(
   constants.SECURITY_CONTEXT_V2_URL,
   require('../contexts/security-v2.jsonld'));
-
-export {constants, contexts};
