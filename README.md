@@ -8,13 +8,13 @@ contexts and constants.
 Security Vocabulary
 -------------------
 
-Security Vocabulary specification https://w3c-dvcg.github.io/security-vocab/.
+Security Vocabulary specification: https://w3c-dvcg.github.io/security-vocab/.
 
 Context Package
 ---------------
 
 The repository contains [JSON-LD][] contexts for the Security Vocabulary.
-These are also packaged in a [npm package][security-contexts] for CommonJS and
+These are also packaged in a [npm package][security-context] for CommonJS and
 ES Modules.  To use with NPM and Node.js, use the following:
 
 ```
