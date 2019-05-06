@@ -1,6 +1,6 @@
 module.exports = {
   output: {
-    library: 'securityvocab'
+    libraryTarget: 'commonjs'
   },
   mode: 'production',
   entry: './js/browser.js',
