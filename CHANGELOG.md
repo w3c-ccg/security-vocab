@@ -1,5 +1,10 @@
 # security-context ChangeLog
 
+## 3.0.1 - 2019-05-16
+
+### Fixed
+- Base release on master branch.
+
 ## 3.0.0 - 2019-05-16
 
 ### Added
