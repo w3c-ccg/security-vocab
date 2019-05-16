@@ -1,6 +1,6 @@
 # security-context ChangeLog
 
-## 3.0.0 - 2019-xx-xx
+## 3.0.0 - 2019-05-16
 
 ### Added
 - Build and distribute static browser version with all contexts.
