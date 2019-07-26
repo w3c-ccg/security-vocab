@@ -1,5 +1,11 @@
 # security-context ChangeLog
 
+## 4.0.0 - TBD
+
+### Added
+- Add terms for EcdsaSecp256 signature suites.
+- Add term `DeriveSecretOperation`.
+
 ## 3.0.1 - 2019-05-16
 
 ### Fixed
