@@ -5,6 +5,8 @@
     "AesKeyWrappingKey2019": "sec:AesKeyWrappingKey2019",
     "DeleteKeyOperation": "sec:DeleteKeyOperation",
     "DeriveSecretOperation": "sec:DeriveSecretOperation",
+    "EcdsaSecp256k1Signature2019": "sec:EcdsaSecp256k1Signature2019",
+    "EcdsaSecp256r1Signature2019": "sec:EcdsaSecp256r1Signature2019",
     "Ed25519Signature2018": "sec:Ed25519Signature2018",
     "Ed25519VerificationKey2018": "sec:Ed25519VerificationKey2018",
     "EquihashProof2018": "sec:EquihashProof2018",
