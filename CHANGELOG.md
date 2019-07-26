@@ -4,6 +4,7 @@
 
 ### Added
 - Add terms for EcdsaSecp256 signature suites.
+- Add terms for EcdsaSecp256 keys.
 - Add term `DeriveSecretOperation`.
 
 ## 3.0.1 - 2019-05-16
