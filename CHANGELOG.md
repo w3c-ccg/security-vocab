@@ -1,6 +1,6 @@
 # security-context ChangeLog
 
-## 4.0.0 - TBD
+## 4.0.0 - 2019-07-26
 
 ### Added
 - Add terms for EcdsaSecp256 signature suites.
