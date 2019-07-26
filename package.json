@@ -1,6 +1,6 @@
 {
   "name": "security-context",
-  "version": "4.0.0",
+  "version": "4.0.1-0",
   "description": "Security Context",
   "main": "js",
   "module": "./dist/module.js",
