@@ -1,8 +1,8 @@
 ---
 name: "🐛 Missing Documentation"
 about: "No human readable documentation for a jsonld property could be found."
-title: ""
-labels: "i: bug, i: help wanted"
+title: "Missing documentation for [PROPERTY_NAME]"
+labels: "bug, help wanted"
 ---
 
 ## Missing Documentation
