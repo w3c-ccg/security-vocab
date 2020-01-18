@@ -7,7 +7,7 @@ labels: "bug, help wanted"
 
 ## Missing Documentation
 
-**Line number of the property that is missing a defintion**
+**Line number of the property that is missing a definition**
 
 https://github.com/w3c-ccg/security-vocab/blob/master/contexts/security-v1.jsonld#L11
 
