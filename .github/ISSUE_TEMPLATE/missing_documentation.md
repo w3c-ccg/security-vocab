@@ -1,0 +1,17 @@
+---
+name: "🐛 Missing Documentation"
+about: "No human readable documentation for a jsonld property could be found."
+title: ""
+labels: "i: bug, i: help wanted"
+---
+
+## Missing Documentation
+
+**Line number of the property that is missing a defintion**
+
+https://github.com/w3c-ccg/security-vocab/blob/master/contexts/security-v1.jsonld#L11
+
+**Additional Context/Screenshots**
+Optional, (You can delete this section).
+Add any other context about the problem here.
+If applicable, add screenshots to help explain.
