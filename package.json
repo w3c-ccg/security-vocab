@@ -12,12 +12,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/w3c-dvcg/security-vocab"
+    "url": "https://github.com/w3c-ccg/security-vocab"
   },
   "bugs": {
-    "url": "https://github.com/w3c-dvcg/security-vocab/issues"
+    "url": "https://github.com/w3c-ccg/security-vocab/issues"
   },
-  "homepage": "https://w3c-dvcg.github.io/security-vocab/",
+  "homepage": "https://w3c-ccg.github.io/security-vocab/",
   "devDependencies": {
     "json-loader": "^0.5.7",
     "rollup": "^1.11.3",
