@@ -331,6 +331,7 @@ and verified.
 }
           </pre>
       </section>
+      <section id="LinkedDataSignature2016">
 
         <h3>LinkedDataSignature2016</h3>
           <p>
@@ -382,6 +383,75 @@ and verified.
     "creator": "https://w3id.org/people/dave/keys/2",
     "created": "2016-11-05T03:12:54Z",
     "signatureValue": "OGQzNGVkMzVmMmQ3ODIyOWM32MzQzNmExMgoYzI4ZDY3NjI4NTIyZTk="
+  }
+}
+          </pre>
+      </section>
+
+      <section id="Ed25519Signature2018">
+
+        <h3>Ed25519Signature2018</h3>
+          <p>
+A Linked Data signature is used for digital signatures on RDF Datasets.
+The default canonicalization mechanism is specified in the RDF Dataset
+Normalization specification, which deterministically names all
+unnamed nodes. The default signature mechanism
+uses a SHA-256 digest and JWS to perform the digital signature.
+          </p>
+          <dl>
+            <dt>Status</dt>
+            <dd property="vs:term_status">stable</dd>
+            <dt>Parent Class</dt>
+            <dd>Signature</dd>
+            <dt>Expected properties</dt>
+            <dd>verificationMethod, jws</dd>
+            <dt>Signature Properties</dt>
+            <dd>
+              <dl>
+                <dt>Default Canonicalization Algorithm</dt>
+                <dd>
+<a rel="canonicalizationAlgorithm"
+  href="https://w3id.org/rdf#URDNA2015">
+https://w3id.org/rdf#URDNA2015</a>
+                </dd>
+                <dt>Default Signature Algorithm</dt>
+                <dd>
+<a rel="signatureAlgorithm"
+  href="https://tools.ietf.org/html/rfc8037#section-3.1">
+  https://tools.ietf.org/html/rfc8037#section-3.1</a>
+                </dd>
+              </dl>
+            </dd>
+          </dl>
+          <p>
+            The JWS used with Linked Data Signatures is the detached and unencoded payload variant. See the links below for details:
+          </p>
+          <ul>
+            <li>
+            <a href="https://tools.ietf.org/html/rfc7797">JSON Web Signature (JWS) Unencoded Payload Option</a>
+          </li>
+          <li>
+            <a href="https://medium.com/swlh/json-web-signature-jws-and-jws-detached-for-a-five-year-old-88729b7b1a68">JSON Web Signature (JWS) and JWS Detached for a five-year-old.</a>
+          </li>
+        </ul>
+          <p>
+The example below shows how a basic JSON-LD proof is expressed in a
+JSON-LD snippet. Note that the proof property is directly embedded in the
+object. The signature algorithm specifies how the proof can be generated
+and verified.
+          </p>
+          <pre class="example prettyprint language-jsonld">
+{
+  "@context": ["https://w3id.org/security/v1", "http://json-ld.org/contexts/person.jsonld"]
+  "@type": "Person",
+  "name": "Dave Longley",
+  "homepage": "https://w3id.org/people/dave",
+  "proof": {
+    "type": "Ed25519Signature2018",
+    "verificationMethod": "https://w3id.org/people/dave/keys/2",
+    "created": "2016-11-05T03:12:54Z",
+    "proofPurpose": "assertionMethod",
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..dXNHwJ-9iPMRQ4AUcv9j-7LuImTiWAG0sDYbRRDDiyAjOV9CUmjLMKiePpytoAmGNGNTHDlEOsTa4CS3dZ7yBg"
   }
 }
           </pre>
@@ -1166,4 +1236,3 @@ a particular class of signatures:
 
   </body>
 </html>
-
