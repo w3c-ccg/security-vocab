@@ -33,7 +33,7 @@ With ES Modules:
 // use one of the following forms:
 import * as securityvocab1 from 'security-context';
 import {default as securityvocab2} from 'security-context';
-import { contexts, constants } from "security-context";
+import {contexts, constants} from 'security-context';
 ```
 
 [ccg]: https://w3c-ccg.github.io/
