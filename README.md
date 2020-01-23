@@ -24,15 +24,15 @@ The package exposes two values:
 - `constants`: An Object of shorthand keys mapped to context URIs.
 
 ```js
-const { contexts, constants } = require("security-context");
+const {contexts, constants} = require('security-context');
 ```
 
 With ES Modules:
 
 ```js
 // use one of the following forms:
-import * as securityvocab1 from "security-context";
-import { default as securityvocab2 } from "security-context";
+import * as securityvocab1 from 'security-context';
+import {default as securityvocab2} from 'security-context';
 import { contexts, constants } from "security-context";
 ```
 
