@@ -129,6 +129,179 @@ until it is ratified as an official document via the World Wide Web Consortium.
     <section>
       <h2>Classes</h2>
 
+      <section id="EcdsaSecp256k1Signature2019" about="https://w3id.org/security#EcdsaSecp256k1Signature2019"
+      typeof="rdfs:Class">
+        <h3>EcdsaSecp256k1Signature2019</h3>
+        <p>
+        This class represents a linked data signature suite. See <a href="https://w3c-ccg.github.io/ld-cryptosuite-registry/#ecdsa-secp256k1">ecdsa-secp256k1</a>.
+        </p>
+        <dl>
+          <dt>Status</dt>
+          <dd property="vs:term_status">unstable</dd>
+          <dt>Parent Class</dt>
+          <dd>owl:Thing</dd>
+          <dt>Expected properties</dt>
+          <dd>type, created, verificationMethod, proofPurpose, jws</dd>
+        </dl>
+        <pre class="example prettyprint language-jsonld">
+{
+  "type": "EcdsaSecp256k1Signature2019",
+  "created": "2020-03-30T20:54:52Z",
+  "verificationMethod": "did:example:123#qfknmVDhMi3Uc190IHBRfBRqMgbEEBRzWOj1E9EmzwM",
+  "proofPurpose": "assertionMethod",
+  "jws": "eyJhbGciOiJFUzI1NksiLCJiNjQiOmZhbHNlLCJjcml0IjpbImI2NCJdfQ..EsCNG3KD8CcurIBd354JMIYvsBr9bvF17RQbfqEg5dZy45vmSGVg1U5_rlXihjGLb3EtTK9-73X3YYYgfW2Byg"
+}
+        </pre>
+      </section>  
+
+      <section id="EcdsaSecp256k1VerificationKey2019" about="https://w3id.org/security#EcdsaSecp256k1VerificationKey2019"
+      typeof="rdfs:Class">
+        <h3>EcdsaSecp256k1VerificationKey2019</h3>
+        <p>
+          This class represents a linked data signature verification key. See <a href="https://w3c-ccg.github.io/ld-cryptosuite-registry/#ecdsa-secp256k1">ecdsa-secp256k1</a>.
+          </p>
+          <dl>
+            <dt>Status</dt>
+            <dd property="vs:term_status">unstable</dd>
+            <dt>Parent Class</dt>
+            <dd>owl:Thing</dd>
+            <dt>Expected properties</dt>
+            <dd>id, type, controller, publicKeyJwk</dd>
+          </dl>
+          <pre class="example prettyprint language-jsonld">
+{
+  "id": "did:example:123#WqzaOweASs78whhl_YvCEvj1nd89IycryVlmZMefcjU",
+  "type": "EcdsaSecp256k1VerificationKey2019",
+  "controller": "did:example:123",
+  "publicKeyJwk": {
+    "crv": "secp256k1",
+    "x": "4xAbUxbGGFPv4qpHlPFAUJdzteUGR1lRK-CELCufU9w",
+    "y": "EYcgCTsff1qtZjI9_ckZTXDSKAIuM0BknrKgo0BZ_Is",
+    "kty": "EC",
+    "kid": "WqzaOweASs78whhl_YvCEvj1nd89IycryVlmZMefcjU"
+  }
+}
+          </pre>
+      </section>  
+
+      <section id="Ed25519Signature2018" about="https://w3id.org/security#Ed25519Signature2018"
+      typeof="rdfs:Class">
+        <h3>Ed25519Signature2018</h3>
+        <p>
+          This class represents a linked data signature suite. See <a href="https://w3c-ccg.github.io/ld-cryptosuite-registry/#ed25519">eddsa-ed25519</a>.
+          </p>
+          <dl>
+            <dt>Status</dt>
+            <dd property="vs:term_status">unstable</dd>
+            <dt>Parent Class</dt>
+            <dd>owl:Thing</dd>
+            <dt>Expected properties</dt>
+            <dd>type, created, verificationMethod, proofPurpose, jws</dd>
+          </dl>
+          <pre class="example prettyprint language-jsonld">
+{
+  "type": "Ed25519Signature2018",
+  "created": "2020-03-27T21:04:27Z",
+  "verificationMethod": "did:web:vc.transmute.world#z6MksHh7qHWvybLg5QTPPdG2DgEjjduBDArV9EF9mRiRzMBN",
+  "proofPurpose": "assertionMethod",
+  "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..jYAsUftMzjTw6Dt9DZnM5wbiPzLyGMrd4xYZ1f74bmoInDGP9QufL7gGCTJdIiPCtj26rX_H6Sa-gAcRfdQOBw"
+}
+          </pre>
+      </section>  
+
+      <section id="Ed25519VerificationKey2018" about="https://w3id.org/security#Ed25519VerificationKey2018"
+      typeof="rdfs:Class">
+        <h3>Ed25519VerificationKey2018</h3>
+        <p>
+          This class represents a linked data signature verification key. See <a href="https://w3c-ccg.github.io/ld-cryptosuite-registry/#ed25519">eddsa-ed25519</a>.
+          </p>
+          <dl>
+            <dt>Status</dt>
+            <dd property="vs:term_status">unstable</dd>
+            <dt>Parent Class</dt>
+            <dd>owl:Thing</dd>
+            <dt>Expected properties</dt>
+            <dd>id, type, controller, publicKeyBase58</dd>
+          </dl>
+          <pre class="example prettyprint language-jsonld">
+{
+  "id": "did:example:123#z6MkkQBvgvqb6zGvS4cydworpUaRDzpszSFixq49ahbDeUTG",
+  "type": "Ed25519VerificationKey2018",
+  "controller": "did:example:123",
+  "publicKeyBase58": "6wvt6gb9mSnTKZnGxNr1yP2RQRZ2aZ1NGp9DkRdCjFft"
+}
+          </pre>
+      </section>  
+
+      <section id="RsaSignature2018" about="https://w3id.org/security#RsaSignature2018"
+      typeof="rdfs:Class">
+        <h3>RsaSignature2018</h3>
+
+        <p>
+          This class represents a linked data signature suite. See <a href="https://w3c-ccg.github.io/ld-cryptosuite-registry/#rsa">rsa</a>.
+          </p>
+          <dl>
+            <dt>Status</dt>
+            <dd property="vs:term_status">unstable</dd>
+            <dt>Parent Class</dt>
+            <dd>owl:Thing</dd>
+            <dt>Expected properties</dt>
+            <dd>type, created, verificationMethod, proofPurpose, jws</dd>
+          </dl>
+          <pre class="example prettyprint language-jsonld">
+{
+  "type": "RsaSignature2018",
+  "created": "2017-06-18T21:19:10Z",
+  "proofPurpose": "assertionMethod",
+  "verificationMethod": "https://example.edu/issuers/keys/1",
+  "jws": "eyJhbGciOiJSUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..TCYt5X
+    sITJX1CxPCT8yAV-TVkIEq_PbChOMqsLfRoPsnsgw5WEuts01mq-pQy7UJiN5mgRxD-WUc
+    X16dUEMGlv50aqzpqh4Qktb3rk-BuQy72IFLOqV0G_zS245-kronKb78cPN25DGlcTwLtj
+    PAYuNzVBAh4vGHSrQyHUdBBPM"
+}
+          </pre>
+      </section>  
+
+      <section id="RsaVerificationKey2018" about="https://w3id.org/security#RsaVerificationKey2018"
+      typeof="rdfs:Class">
+        <h3>RsaVerificationKey2018</h3>
+        <p>
+          This class represents a linked data signature verification key. See <a href="https://w3c-ccg.github.io/ld-cryptosuite-registry/#rsa">rsa</a>.
+          </p>
+          <dl>
+            <dt>Status</dt>
+            <dd property="vs:term_status">unstable</dd>
+            <dt>Parent Class</dt>
+            <dd>owl:Thing</dd>
+            <dt>Expected properties</dt>
+            <dd>id, type, controller, expires, publicKeyPem</dd>
+          </dl>
+          <pre class="example prettyprint language-jsonld">
+{
+  "id": "did:example:123456789abcdefghi#keys-1",
+  "type": "RsaVerificationKey2018",
+  "controller": "did:example:123456789abcdefghi",
+  "expires": "2017-02-08T16:02:20Z",
+  "publicKeyPem": "-----BEGIN PUBLIC KEY...END PUBLIC KEY-----\r\n"
+}
+          </pre>
+      </section> 
+
+      <section id="SchnorrSecp256k1Signature2019" about="https://w3id.org/security#SchnorrSecp256k1Signature2019"
+      typeof="rdfs:Class">
+        <h3>SchnorrSecp256k1Signature2019</h3>
+      </section> 
+
+      <section id="SchnorrSecp256k1VerificationKey2019" about="https://w3id.org/security#SchnorrSecp256k1VerificationKey2019"
+      typeof="rdfs:Class">
+        <h3>SchnorrSecp256k1VerificationKey2019</h3>
+      </section> 
+
+      <section id="ServiceEndpointProxyService" about="https://w3id.org/security#ServiceEndpointProxyService"
+      typeof="rdfs:Class">
+        <h3>ServiceEndpointProxyService</h3>
+      </section> 
+
       <section id="Digest" about="https://w3id.org/security#Digest"
         typeof="rdfs:Class">
         <h3>Digest</h3>
@@ -1233,50 +1406,7 @@ a particular class of signatures:
         </pre>
       </section>
 
-      <section id="EcdsaSecp256k1Signature2019" about="https://w3id.org/security#EcdsaSecp256k1Signature2019"
-      typeof="rdfs:Class">
-        <h3>EcdsaSecp256k1Signature2019</h3>
-      </section>  
-
-      <section id="EcdsaSecp256k1VerificationKey2019" about="https://w3id.org/security#EcdsaSecp256k1VerificationKey2019"
-      typeof="rdfs:Class">
-        <h3>EcdsaSecp256k1Signature2019</h3>
-      </section>  
-
-      <section id="Ed25519Signature2018" about="https://w3id.org/security#Ed25519Signature2018"
-      typeof="rdfs:Class">
-        <h3>Ed25519Signature2018</h3>
-      </section>  
-
-      <section id="Ed25519VerificationKey2018" about="https://w3id.org/security#Ed25519VerificationKey2018"
-      typeof="rdfs:Class">
-        <h3>Ed25519VerificationKey2018</h3>
-      </section>  
-
-      <section id="RsaSignature2018" about="https://w3id.org/security#RsaSignature2018"
-      typeof="rdfs:Class">
-        <h3>RsaSignature2018</h3>
-      </section>  
-
-      <section id="RsaVerificationKey2018" about="https://w3id.org/security#RsaVerificationKey2018"
-      typeof="rdfs:Class">
-        <h3>RsaVerificationKey2018</h3>
-      </section> 
-
-      <section id="SchnorrSecp256k1Signature2019" about="https://w3id.org/security#SchnorrSecp256k1Signature2019"
-      typeof="rdfs:Class">
-        <h3>SchnorrSecp256k1Signature2019</h3>
-      </section> 
-
-      <section id="SchnorrSecp256k1VerificationKey2019" about="https://w3id.org/security#SchnorrSecp256k1VerificationKey2019"
-      typeof="rdfs:Class">
-        <h3>SchnorrSecp256k1VerificationKey2019</h3>
-      </section> 
-
-      <section id="ServiceEndpointProxyService" about="https://w3id.org/security#ServiceEndpointProxyService"
-      typeof="rdfs:Class">
-        <h3>ServiceEndpointProxyService</h3>
-      </section> 
+      
 
       <section id="allowedAction" about="https://w3id.org/security#allowedAction"
       typeof="rdf:Property">
