@@ -184,54 +184,9 @@ until it is ratified as an official document via the World Wide Web Consortium.
           </pre>
       </section>  
 
-      <section id="Ed25519Signature2018" about="https://w3id.org/security#Ed25519Signature2018"
-      typeof="rdfs:Class">
-        <h3>Ed25519Signature2018</h3>
-        <p>
-          This class represents a linked data signature suite. See <a href="https://w3c-ccg.github.io/ld-cryptosuite-registry/#ed25519">eddsa-ed25519</a>.
-          </p>
-          <dl>
-            <dt>Status</dt>
-            <dd property="vs:term_status">unstable</dd>
-            <dt>Parent Class</dt>
-            <dd>owl:Thing</dd>
-            <dt>Expected properties</dt>
-            <dd>type, created, verificationMethod, proofPurpose, jws</dd>
-          </dl>
-          <pre class="example prettyprint language-jsonld">
-{
-  "type": "Ed25519Signature2018",
-  "created": "2020-03-27T21:04:27Z",
-  "verificationMethod": "did:web:vc.transmute.world#z6MksHh7qHWvybLg5QTPPdG2DgEjjduBDArV9EF9mRiRzMBN",
-  "proofPurpose": "assertionMethod",
-  "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..jYAsUftMzjTw6Dt9DZnM5wbiPzLyGMrd4xYZ1f74bmoInDGP9QufL7gGCTJdIiPCtj26rX_H6Sa-gAcRfdQOBw"
-}
-          </pre>
-      </section>  
+      
 
-      <section id="Ed25519VerificationKey2018" about="https://w3id.org/security#Ed25519VerificationKey2018"
-      typeof="rdfs:Class">
-        <h3>Ed25519VerificationKey2018</h3>
-        <p>
-          This class represents a linked data signature verification key. See <a href="https://w3c-ccg.github.io/ld-cryptosuite-registry/#ed25519">eddsa-ed25519</a>.
-          </p>
-          <dl>
-            <dt>Status</dt>
-            <dd property="vs:term_status">unstable</dd>
-            <dt>Parent Class</dt>
-            <dd>owl:Thing</dd>
-            <dt>Expected properties</dt>
-            <dd>id, type, controller, publicKeyBase58</dd>
-          </dl>
-          <pre class="example prettyprint language-jsonld">
-{
-  "id": "did:example:123#z6MkkQBvgvqb6zGvS4cydworpUaRDzpszSFixq49ahbDeUTG",
-  "type": "Ed25519VerificationKey2018",
-  "controller": "did:example:123",
-  "publicKeyBase58": "6wvt6gb9mSnTKZnGxNr1yP2RQRZ2aZ1NGp9DkRdCjFft"
-}
-          </pre>
-      </section>  
+      
 
       <section id="RsaSignature2018" about="https://w3id.org/security#RsaSignature2018"
       typeof="rdfs:Class">
@@ -560,6 +515,30 @@ and verified.
 }
           </pre>
       </section>
+
+      <section id="Ed25519VerificationKey2018" about="https://w3id.org/security#Ed25519VerificationKey2018"
+      typeof="rdfs:Class">
+        <h3>Ed25519VerificationKey2018</h3>
+        <p>
+          This class represents a linked data signature verification key. See <a href="https://w3c-ccg.github.io/ld-cryptosuite-registry/#ed25519">eddsa-ed25519</a>.
+          </p>
+          <dl>
+            <dt>Status</dt>
+            <dd property="vs:term_status">unstable</dd>
+            <dt>Parent Class</dt>
+            <dd>owl:Thing</dd>
+            <dt>Expected properties</dt>
+            <dd>id, type, controller, publicKeyBase58</dd>
+          </dl>
+          <pre class="example prettyprint language-jsonld">
+{
+  "id": "did:example:123#z6MkkQBvgvqb6zGvS4cydworpUaRDzpszSFixq49ahbDeUTG",
+  "type": "Ed25519VerificationKey2018",
+  "controller": "did:example:123",
+  "publicKeyBase58": "6wvt6gb9mSnTKZnGxNr1yP2RQRZ2aZ1NGp9DkRdCjFft"
+}
+          </pre>
+      </section>  
 
       <section id="Ed25519Signature2018">
 
