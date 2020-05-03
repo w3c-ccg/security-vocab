@@ -1,0 +1,11 @@
+{
+  "root": true,
+  "parserOptions": {
+    "parser": "babel-eslint"
+  },
+  "env": {
+    "commonjs": true,
+    "node": true
+  },
+  "extends": ["digitalbazaar"]
+}
