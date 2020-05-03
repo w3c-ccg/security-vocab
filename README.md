@@ -1,5 +1,7 @@
 # Security Vocabulary
 
+![CI](https://github.com/w3c-ccg/security-vocab/workflows/CI/badge.svg)
+
 This repository contains the [Credentials Community Group][ccg]
 Security Vocabulary and a [npm package][security-context] that exports related
 contexts and constants.

@@ -28,6 +28,7 @@
   "scripts": {
     "prepublish": "npm run build",
     "build": "webpack && rollup -c",
-    "lint": "echo 'help...'"
+    "lint": "echo 'there is no lint...'",
+    "test": "echo 'there are no tests...'"
   }
 }
