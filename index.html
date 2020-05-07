@@ -1447,6 +1447,39 @@ to the identity <code>https://payswarm.example.com/i/bob</code>.
 
       </section>
 
+
+      <section id="publicKeyJwk" about="https://w3id.org/security#publicKeyJwk"
+        typeof="rdf:Property">
+        <h3>publicKeyJwk</h3>
+        <p>
+        See <a href="https://www.iana.org/assignments/jose/jose.xhtml">IANA JOSE</a>. 
+        See also <a href="https://tools.ietf.org/html/rfc7517">RFC 7517</a>.
+        </p>
+        <dl>
+          <dt>Status</dt>
+          <dd property="vs:term_status">stable</dd>
+          <dt>Domain</dt>
+          <dd>Key</dd>
+          <dt>Range</dt>
+          <dd>xsd:string</dd>
+        </dl>
+
+        <pre class="example prettyprint language-jsonld">
+{
+  "id": "did:example:123#_Qq0UL2Fq651Q0Fjd6TvnYE-faHiOpRlPVQcY_-tA4A",
+  "type": "JsonWebKey2020",
+  "controller": "did:example:123",
+  "publicKeyJwk": {
+    "crv": "Ed25519",
+    "x": "VCpo2LMLhn6iWku8MKvSLg2ZAoC-nlOyPVQaO3FxVeQ",
+    "kty": "OKP",
+    "kid": "_Qq0UL2Fq651Q0Fjd6TvnYE-faHiOpRlPVQcY_-tA4A"
+  }
+}
+        </pre>
+      </section>
+
+
       <section id="publicKeyPem" about="https://w3id.org/security#publicKeyPem"
         typeof="rdf:Property">
         <h3>publicKeyPem</h3>
