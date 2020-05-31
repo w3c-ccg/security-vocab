@@ -1298,19 +1298,36 @@ to the identity <code>https://payswarm.example.com/i/bob</code>.
       typeof="rdf:Property">
         <h3>capabilityDelegation</h3>
         <p>
-          An capabilityDelegation property is used to specify a URL that contains information about
-          a verificationMethod used for capability delegation.
-                  </p>
-                  <dl>
-                    <dt>Status</dt>
-                    <dd property="vs:term_status">unstable</dd>
-                    <dt>Range</dt>
-                    <dd>IRI</dd>
-                  </dl>
-                  <p>
-          The following example demonstrates the expression of a verificationMethod used for capability delegation belonging
-          to the identity <code>did:example:123#WjKgJV7VRw3hmgU6--4v15c0Aewbcvat1BsRFTIqa5Q</code>.
-                  </p>
+A capabilityDelegation property is used to express that one or more
+verificationMethods are authorized to be used to verify cryptographic proofs
+that were created for the purpose of delegating capabilities. 
+        </p>
+        <p>
+A verificationMethod may be referenced by its identifier (a URL) or expressed
+in full.
+        </p>
+        <p>
+The aforementioned proofs are created to prove that some entity is delegating
+the authority to take some action to another entity. A verifier of the proof
+should expect the proof to express a proofPurpose of capabilityDelegation and
+reference a verificationMethod to verify it. The dereferenced
+verificationMethod MUST have a controller property that has a property of
+capabilityDelegation that references the verificationMethod. This indicates
+that the controller has authorized it for the expressed proofPurpose. 
+        </p>
+        <p class="note">
+How capabilities are expressed is application-specific.
+        </p>
+        <dl>
+          <dt>Status</dt>
+          <dd property="vs:term_status">unstable</dd>
+          <dt>Range</dt>
+          <dd>IRI</dd>
+        </dl>
+        <p>
+The following example demonstrates the expression of a verificationMethod used for capability delegation belonging
+to the identity <code>did:example:123#WjKgJV7VRw3hmgU6--4v15c0Aewbcvat1BsRFTIqa5Q</code>.
+        </p>
 
         <pre class="example prettyprint language-jsonld">
 {
@@ -1336,26 +1353,44 @@ to the identity <code>https://payswarm.example.com/i/bob</code>.
   "did:example:123#WjKgJV7VRw3hmgU6--4v15c0Aewbcvat1BsRFTIqa5Q"
   ]
 }
-      </pre>
+        </pre>
       </section> 
 
       <section id="capabilityInvocation" about="https://w3id.org/security#capabilityInvocation"
       typeof="rdf:Property">
         <h3>capabilityInvocation</h3>
         <p>
-          An capabilityInvocation property is used to specify a URL that contains information about
-          a verificationMethod used for capability delegation.
-                  </p>
-                  <dl>
-                    <dt>Status</dt>
-                    <dd property="vs:term_status">unstable</dd>
-                    <dt>Range</dt>
-                    <dd>IRI</dd>
-                  </dl>
-                  <p>
-          The following example demonstrates the expression of a verificationMethod used for capability invocation belonging
-          to the identity <code>did:example:123#WjKgJV7VRw3hmgU6--4v15c0Aewbcvat1BsRFTIqa5Q</code>.
-                  </p>
+A capabilityInvocation property is used to express that one or more
+verificationMethods are authorized to be used to verify cryptographic proofs
+that were created for the purpose of invoking capabilities.
+        </p>
+        <p>
+A verificationMethod MAY be referenced by its identifier (a URL) or expressed
+in full.
+        </p>
+        <p>
+The aforementioned proofs are created to prove that some entity is
+attempting to exercise some authority they possess to take an action. A
+verifier of the proof should expect the proof to express a proofPurpose of
+capabilityInvocation and reference a verificationMethod to verify it. The
+dereferenced verificationMethod MUST have a controller property that, when
+dereferenced, has a property of capabilityInvocation that references the
+verificationMethod. This indicates that the controller has authorized it for
+the expressed proofPurpose.
+        </p>
+        <p class="note">
+How capabilities are expressed is application-specific.
+        </p>
+        <dl>
+          <dt>Status</dt>
+          <dd property="vs:term_status">unstable</dd>
+          <dt>Range</dt>
+          <dd>IRI</dd>
+        </dl>
+        <p>
+The following example demonstrates the expression of a verificationMethod used for capability invocation belonging
+to the identity <code>did:example:123#WjKgJV7VRw3hmgU6--4v15c0Aewbcvat1BsRFTIqa5Q</code>.
+        </p>
 
         <pre class="example prettyprint language-jsonld">
 {
@@ -1381,7 +1416,7 @@ to the identity <code>https://payswarm.example.com/i/bob</code>.
   "did:example:123#WjKgJV7VRw3hmgU6--4v15c0Aewbcvat1BsRFTIqa5Q"
   ]
 }
-      </pre>
+        </pre>
       </section>
 
       <section id="keyAgreement" about="https://w3id.org/security#keyAgreement"
