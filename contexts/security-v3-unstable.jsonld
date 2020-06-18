@@ -5,9 +5,14 @@
         },
         "https://w3id.org/security/v2",
         {
+            "JsonWebSignature2020": {
+                "@id": "sec:JsonWebSignature2020"
+            },
             "publicKeyHex": {
                 "@id": "sec:publicKeyHex"
             }
         }
     ]
 }
+
+
