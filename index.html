@@ -1514,6 +1514,34 @@ data that has been abbreviated for the sake of the readability of the example.
         </pre>
       </section>
 
+      <section id="publicKeyHex" about="https://w3id.org/security#publicKeyHex"
+      typeof="rdf:Property">
+        <h3>publicKeyHex</h3>
+        <p>
+A <code>publicKeyHex</code> property is used to specify the hex-encoded version of the public key, based on <a href="https://tools.ietf.org/html/rfc4648#section-8">section 8 of rfc4648</a>. Hex encoding is also known as Base16 encoding.
+        </p>
+        <dl>
+          <dt>Status</dt>
+          <dd property="vs:term_status">unstable</dd>
+          <dt>Domain</dt>
+          <dd>Key</dd>
+          <dt>Range</dt>
+          <dd>xsd:string</dd>
+        </dl>
+        <p>
+    The following example demonstrates the expression of a public key
+    in hex format.
+        </p>
+        <pre class="example prettyprint language-jsonld">
+{
+    "id": "did:example:123#hexKey",
+    "controller": "did:example:123",
+    "type": "EcdsaSecp256k1RecoveryMethod2020",
+    "publicKeyHex":"027560AF3387D375E3342A6968179EF3C6D04F5D33B2B611CF326D4708BADD7770"
+}
+        </pre>
+      </section>
+
       <section id="publicKeyService" about="https://w3id.org/security#publicKeyService"
         typeof="rdf:Property">
         <h3>publicKeyService</h3>
