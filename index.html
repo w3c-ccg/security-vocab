@@ -899,6 +899,37 @@ z7u3IxpqNVcXHExjXQE=",
         </pre>
       </section>
 
+      <section id="ethereumAddress" about="https://w3id.org/security#ethereumAddress"
+      typeof="rdf:Property">
+        <h3>ethereumAddress</h3>
+        <p>
+An <code>ethereumAddress</code> property is used to specify the Ethereum address (as per the 
+<a href="https://ethereum.github.io/yellowpaper/paper.pdf">Ethereum Yellow Paper: ETHEREUM: A SECURE DECENTRALISED
+GENERALISED TRANSACTION LEDGER</a> composed of the prefix "0x", a common identifier for hexadecimal, concatenated
+with the rightmost 20 bytes of the Keccak-256 hash (big endian) of the ECDSA public key (the curve used is the
+so-called secp256k1). In hexadecimal, 2 digits represent a byte, meaning addresses contain 40 hexadecimal digits.
+The Ethereum address should also contain a checksum as per <a href="https://eips.ethereum.org/EIPS/eip-55">EIP-155</a>
+        </p>
+        <dl>
+          <dt>Status</dt>
+          <dd property="vs:term_status">unstable</dd>
+          <dt>Domain</dt>
+          <dd>Key</dd>
+          <dt>Range</dt>
+          <dd>xsd:string</dd>
+        </dl>
+        <p>
+    The following example demonstrates the expression of an Ethereum address in hex format.
+        </p>
+        <pre class="example prettyprint language-jsonld">
+{
+    "id": "did:example:123#ethereumAddress",
+    "type": "EcdsaSecp256k1RecoverySignature2020",
+    "ethereumAddress":"0xb794f5ea0ba39494ce839613fffba74279579268"
+}
+        </pre>
+      </section>
+
       <section id="expires" about="https://w3id.org/security#expires"
         typeof="rdf:Property">
         <h3>expires</h3>
