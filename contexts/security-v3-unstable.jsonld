@@ -5,11 +5,15 @@
         },
         "https://w3id.org/security/v2",
         {
-            "ethereumAddress" {
+            "owl": "https://www.w3.org/TR/owl-ref/#",
+            "ethereumAddress": {
                 "@id": "sec:ethereumAddress"
             },
             "publicKeyHex": {
                 "@id": "sec:publicKeyHex"
+            },
+            "sameAs": {
+                "@id": "owl:sameAs-def"
             }
         }
     ]

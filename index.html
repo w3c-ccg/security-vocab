@@ -1099,6 +1099,31 @@ algorithm:
         </pre>
       </section>
 
+      <section id="sameAs" about="https://w3id.org/security#sameAs"
+        typeof="rdf:Property">
+        <h3>sameAs</h3>
+        <p>
+          owl:sameAs is used to state that two URI references refer to the same individual. 
+          See also <a href="https://www.w3.org/TR/owl-ref">https://www.w3.org/TR/owl-ref</a>
+        </p>
+        <dl>
+          <dt>Status</dt>
+          <dd property="vs:term_status">stable</dd>
+          <dt>Range</dt>
+          <dd>IRI</dd>
+        </dl>
+        <p>
+The example below shows how to express that two subjects are the same, using the OWL sameAs relation.
+        </p>
+        <pre class="example prettyprint language-jsonld">
+{
+  "@context": ["https://www.w3.org/ns/did/v1"],
+  "id": "did:example:123",
+  "sameAs": "https://auditor.example.com/inspector/456",
+}
+        </pre>
+      </section>
+
       <section id="owner" about="https://w3id.org/security#owner"
         typeof="rdf:Property">
         <h3>owner</h3>
