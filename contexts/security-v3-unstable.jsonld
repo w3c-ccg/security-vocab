@@ -13,7 +13,7 @@
                 "@id": "sec:publicKeyHex"
             },
             "sameAs": {
-                "@id": "owl:sameAs-def"
+                "@id": "owl:sameAs"
             }
         }
     ]
