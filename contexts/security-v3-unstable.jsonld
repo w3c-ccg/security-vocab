@@ -5,7 +5,7 @@
         },
         "https://w3id.org/security/v2",
         {
-            "owl": "https://www.w3.org/TR/owl-ref/#",
+            "owl": "http://www.w3.org/2002/07/owl#",
             "ethereumAddress": {
                 "@id": "sec:ethereumAddress"
             },
