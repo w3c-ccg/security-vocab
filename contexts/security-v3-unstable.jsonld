@@ -5,7 +5,7 @@
         },
         "https://w3id.org/security/v2",
         {
-            "ethereumAddress" {
+            "ethereumAddress": {
                 "@id": "sec:ethereumAddress"
             },
             "publicKeyHex": {
