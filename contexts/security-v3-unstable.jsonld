@@ -8,6 +8,9 @@
             "JsonWebSignature2020": {
                 "@id": "sec:JsonWebSignature2020"
             },
+            "ethereumAddress": {
+                "@id": "sec:ethereumAddress"
+            },
             "publicKeyHex": {
                 "@id": "sec:publicKeyHex"
             }
