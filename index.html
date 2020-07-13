@@ -899,6 +899,55 @@ z7u3IxpqNVcXHExjXQE=",
         </pre>
       </section>
 
+      <section id="blockchainAccountId" about="https://w3id.org/security#blockchainAccountId"
+      typeof="rdf:Property">
+        <h3>blockchainAccountId</h3>
+        <p>
+An <code>blockchainAccountId</code> property is used to specify a blockchain account identifier (as per the 
+<a href="https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md">CAIP-10 Account ID Specification</a>.
+        </p>
+        <dl>
+          <dt>Status</dt>
+          <dd property="vs:term_status">unstable</dd>
+          <dt>Domain</dt>
+          <dd>Key</dd>
+          <dt>Range</dt>
+          <dd>xsd:string</dd>
+        </dl>
+        <p>
+    The following example demonstrates the expression of a Mainet Ethereum address.
+        </p>
+        <pre class="example prettyprint language-jsonld">
+{
+    "id": "did:example:123#blockchainAccountId",
+    "type": "EcdsaSecp256k1RecoverySignature2020",
+    "blockchainAccountId":"0xab16a96d359ec26a11e2c2b3d8f8b8942d5bfcdb@eip155:1"
+}
+        </pre>
+
+        <p>
+          The following example demonstrates the expression of a Mainet Bitcoin address.
+              </p>
+       <pre class="example prettyprint language-jsonld">
+      {
+          "id": "did:example:123#blockchainAccountId",
+          "type": "EcdsaSecp256k1RecoverySignature2020",
+          "blockchainAccountId":"128Lkh3S7CkDTBZ8W7BbpsN3YYizJMp8p6@bip122:000000000019d6689c085ae165831e93"
+      }
+       </pre>
+
+       <p>
+        The following example demonstrates the expression of a Cosmos Hub address.
+            </p>
+     <pre class="example prettyprint language-jsonld">
+    {
+        "id": "did:example:123#blockchainAccountId",
+        "type": "EcdsaSecp256k1RecoverySignature2020",
+        "blockchainAccountId":"cosmos1t2uflqwqe0fsj0shcfkrvpukewcw40yjj6hdc0@cosmos:cosmoshub-3"
+    }
+     </pre>
+      </section>
+
       <section id="ethereumAddress" about="https://w3id.org/security#ethereumAddress"
       typeof="rdf:Property">
         <h3>ethereumAddress</h3>
