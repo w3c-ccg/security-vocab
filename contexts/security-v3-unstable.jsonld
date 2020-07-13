@@ -10,6 +10,9 @@
             },
             "publicKeyHex": {
                 "@id": "sec:publicKeyHex"
+            },
+            "blockchainAccountId":{
+                "@id": "sec:blockchainAccountId"
             }
         }
     ]
