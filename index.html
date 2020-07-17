@@ -609,6 +609,77 @@ and verified.
           </pre>
       </section>
 
+      <section id="JsonWebSignature2020">
+
+        <h3>JsonWebSignature2020</h3>
+          <p>
+A Linked Data signature is used for digital signatures on RDF Datasets.
+The default canonicalization mechanism is specified in the RDF Dataset
+Normalization specification, which deterministically names all
+unnamed nodes. The default signature mechanism
+uses a SHA-256 digest and JWS to perform the digital signature.
+          </p>
+          <dl>
+            <dt>Status</dt>
+            <dd property="vs:term_status">stable</dd>
+            <dt>Parent Class</dt>
+            <dd>Signature</dd>
+            <dt>Expected properties</dt>
+            <dd>verificationMethod, jws</dd>
+            <dt>Signature Properties</dt>
+            <dd>
+              <dl>
+                <dt>Default Canonicalization Algorithm</dt>
+                <dd>
+<a rel="canonicalizationAlgorithm"
+  href="https://w3id.org/rdf#URDNA2015">
+https://w3id.org/rdf#URDNA2015</a>
+                </dd>
+                <dt>Default Signature Algorithm</dt>
+                <dd>
+<a rel="signatureAlgorithm"
+  href="https://tools.ietf.org/html/rfc8037#section-3.1">
+  https://tools.ietf.org/html/rfc8037#section-3.1</a>
+                </dd>
+              </dl>
+            </dd>
+          </dl>
+          <p>
+            The JWS used with Linked Data Signatures is the detached and unencoded payload variant. See the links below for details:
+          </p>
+          <ul>
+            <li>
+            <a href="https://tools.ietf.org/html/rfc7797">JSON Web Signature (JWS) Unencoded Payload Option</a>
+          </li>
+          <li>
+            <a href="https://medium.com/swlh/json-web-signature-jws-and-jws-detached-for-a-five-year-old-88729b7b1a68">JSON Web Signature (JWS) and JWS Detached for a five-year-old.</a>
+          </li>
+        </ul>
+          <p>
+The example below shows how a basic JSON-LD proof is expressed in a
+JSON-LD snippet. Note that the proof property is directly embedded in the
+object. The signature algorithm specifies how the proof can be generated
+and verified.
+          </p>
+          <pre class="example prettyprint language-jsonld">
+{
+  "@context": ["https://w3id.org/security/v1", "http://json-ld.org/contexts/person.jsonld"]
+  "@type": "Person",
+  "name": "Dave Longley",
+  "homepage": "https://w3id.org/people/dave",
+  "proof": {
+    "type": "JsonWebSignature2020",
+    "verificationMethod": "https://w3id.org/people/dave/keys/2",
+    "created": "2016-11-05T03:12:54Z",
+    "proofPurpose": "assertionMethod",
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..dXNHwJ-9iPMRQ4AUcv9j-7LuImTiWAG0sDYbRRDDiyAjOV9CUmjLMKiePpytoAmGNGNTHDlEOsTa4CS3dZ7yBg"
+  }
+}
+          </pre>
+      </section>
+
+      
+
       <section id="Key" about="https://w3id.org/security#Key"
         typeof="rdfs:Class">
         <h3>Key</h3>
@@ -895,6 +966,86 @@ z7u3IxpqNVcXHExjXQE=",
   "authenticationTag": "q25H1CzsE731OmeyEle93w==",
   "initializationVector": "vcDU1eWTy8vVGhNOszREhSblFVqVnGpBUm0zMTRmcWtMrRX=="
   "publicKey": "https://example.com/people/john/keys/23"
+}
+        </pre>
+      </section>
+
+      <section id="blockchainAccountId" about="https://w3id.org/security#blockchainAccountId"
+      typeof="rdf:Property">
+        <h3>blockchainAccountId</h3>
+        <p>
+An <code>blockchainAccountId</code> property is used to specify a blockchain account identifier (as per the 
+<a href="https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md">CAIP-10 Account ID Specification</a>.
+        </p>
+        <dl>
+          <dt>Status</dt>
+          <dd property="vs:term_status">unstable</dd>
+          <dt>Domain</dt>
+          <dd>Key</dd>
+          <dt>Range</dt>
+          <dd>xsd:string</dd>
+        </dl>
+        <p>
+    The following example demonstrates the expression of a Mainet Ethereum address.
+        </p>
+        <pre class="example prettyprint language-jsonld">
+{
+    "id": "did:example:123#blockchainAccountId",
+    "type": "EcdsaSecp256k1RecoverySignature2020",
+    "blockchainAccountId":"0xab16a96d359ec26a11e2c2b3d8f8b8942d5bfcdb@eip155:1"
+}
+        </pre>
+
+        <p>
+          The following example demonstrates the expression of a Mainet Bitcoin address.
+              </p>
+       <pre class="example prettyprint language-jsonld">
+      {
+          "id": "did:example:123#blockchainAccountId",
+          "type": "EcdsaSecp256k1RecoverySignature2020",
+          "blockchainAccountId":"128Lkh3S7CkDTBZ8W7BbpsN3YYizJMp8p6@bip122:000000000019d6689c085ae165831e93"
+      }
+       </pre>
+
+       <p>
+        The following example demonstrates the expression of a Cosmos Hub address.
+            </p>
+     <pre class="example prettyprint language-jsonld">
+    {
+        "id": "did:example:123#blockchainAccountId",
+        "type": "EcdsaSecp256k1RecoverySignature2020",
+        "blockchainAccountId":"cosmos1t2uflqwqe0fsj0shcfkrvpukewcw40yjj6hdc0@cosmos:cosmoshub-3"
+    }
+     </pre>
+      </section>
+
+      <section id="ethereumAddress" about="https://w3id.org/security#ethereumAddress"
+      typeof="rdf:Property">
+        <h3>ethereumAddress</h3>
+        <p>
+An <code>ethereumAddress</code> property is used to specify the Ethereum address (as per the 
+<a href="https://ethereum.github.io/yellowpaper/paper.pdf">Ethereum Yellow Paper: ETHEREUM: A SECURE DECENTRALISED
+GENERALISED TRANSACTION LEDGER</a> composed of the prefix "0x", a common identifier for hexadecimal, concatenated
+with the rightmost 20 bytes of the Keccak-256 hash (big endian) of the ECDSA public key (the curve used is the
+so-called secp256k1). In hexadecimal, 2 digits represent a byte, meaning addresses contain 40 hexadecimal digits.
+The Ethereum address should also contain a checksum as per <a href="https://eips.ethereum.org/EIPS/eip-55">EIP-155</a>
+        </p>
+        <dl>
+          <dt>Status</dt>
+          <dd property="vs:term_status">unstable</dd>
+          <dt>Domain</dt>
+          <dd>Key</dd>
+          <dt>Range</dt>
+          <dd>xsd:string</dd>
+        </dl>
+        <p>
+    The following example demonstrates the expression of an Ethereum address in hex format.
+        </p>
+        <pre class="example prettyprint language-jsonld">
+{
+    "id": "did:example:123#ethereumAddress",
+    "type": "EcdsaSecp256k1RecoverySignature2020",
+    "ethereumAddress":"0xb794f5ea0ba39494ce839613fffba74279579268"
 }
         </pre>
       </section>

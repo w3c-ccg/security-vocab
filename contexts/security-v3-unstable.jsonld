@@ -1,18 +1,26 @@
 {
-  "@context": [
-      {
-          "@version": 1.1
-      },
-      "https://w3id.org/security/v2",
-      {
-          "publicKeyHex": {
-              "@id": "sec:publicKeyHex"
-          },
-          "publicKeyJwk": {
+    "@context": [
+        {
+            "@version": 1.1
+        },
+        "https://w3id.org/security/v2",
+        {
+            "JsonWebSignature2020": {
+                "@id": "sec:JsonWebSignature2020"
+            },
+            "publicKeyJwk": {
               "@id": "sec:publicKeyJwk",
               "@type": "@json"
-          }
-      }
-  ]
+            },
+            "ethereumAddress": {
+                "@id": "sec:ethereumAddress"
+            },
+            "publicKeyHex": {
+                "@id": "sec:publicKeyHex"
+            },
+            "blockchainAccountId":{
+                "@id": "sec:blockchainAccountId"
+            }
+        }
+    ]
 }
-
