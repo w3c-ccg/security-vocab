@@ -678,6 +678,193 @@ and verified.
           </pre>
       </section>
 
+      <section id="BbsBlsSignature2020" about="https://w3id.org/security#BbsBlsSignature2020"
+      typeof="rdfs:Class">
+
+        <h3>BbsBlsSignature2020</h3>
+          <p>
+A Linked Data signature is used for digital signatures on RDF Datasets.
+The default canonicalization mechanism is specified in the RDF Dataset
+Normalization specification, which deterministically names all
+unnamed nodes. Importantly, a BbsBlsSignature digests each of the statements
+produced by the normalization process individually to enable selective disclosure. 
+The signature mechanism uses Blake2B as the digest for each statement and produces a single 
+output digital signature.
+          </p>
+          <dl>
+            <dt>Status</dt>
+            <dd property="vs:term_status">unstable</dd>
+            <dt>Parent Class</dt>
+            <dd>Signature</dd>
+            <dt>Expected properties</dt>
+            <dd>verificationMethod, proofValue</dd>
+            <dt>Signature Properties</dt>
+            <dd>
+              <dl>
+                <dt>Default Canonicalization Algorithm</dt>
+                <dd>
+<a rel="canonicalizationAlgorithm"
+  href="https://w3id.org/rdf#URDNA2015">
+https://w3id.org/rdf#URDNA2015</a>
+                </dd>
+                <dt>Default Signature Algorithm</dt>
+                <dd>
+<a rel="signatureAlgorithm"
+  href="https://mattrglobal.github.io/bbs-signatures-spec/#name-sign">
+  https://mattrglobal.github.io/bbs-signatures-spec/#name-sign</a>
+                </dd>
+              </dl>
+            </dd>
+          </dl>
+        </ul>
+        <p>
+A Bbs signature is a cryptographic digital signature that works with any pairing friendly elliptic
+curve, a BbsBls signature is a BBS signature using keys from the BLS12-381 curve:
+        </p>
+          <p>
+The example below shows how a basic JSON-LD proof is expressed in a
+JSON-LD snippet. Note that the proof property is directly embedded in the
+object. The signature algorithm specifies how the proof can be generated
+and verified.
+          </p>
+          <pre class="example prettyprint language-jsonld">
+{
+  "@context": ["https://w3id.org/security/v1", "http://json-ld.org/contexts/person.jsonld"]
+  "@type": "Person",
+  "name": "Dave Longley",
+  "homepage": "https://w3id.org/people/dave",
+  "proof": {
+    "type": "BbsBlsSignature2020",
+    "verificationMethod": "https://w3id.org/people/dave/keys/2",
+    "created": "2016-11-05T03:12:54Z",
+    "proofPurpose": "assertionMethod",
+    "proofValue": "pTy8PJCw93RrD+X55McbjHfrlW5SJYNhF84Eggafnlb2CH8QtfXfNsTnVuTQp8UfKKbKqOp6ASwv2kmKtXJJpK+n7+mNKMbeBqw/fuwbu5w/QjvCgYZH3WhlZq6zTmRN9MwO1lQOxntcnKP8xmaoAw=="
+  }
+}
+          </pre>
+      </section>
+
+      <section id="BbsBlsSignatureProof2020" about="https://w3id.org/security#BbsBlsSignatureProof2020"
+      typeof="rdfs:Class">
+
+        <h3>BbsBlsSignatureProof2020</h3>
+          <p>
+A Linked Data signature is used for digital signatures on RDF Datasets.
+The default canonicalization mechanism is specified in the RDF Dataset
+Normalization specification, which deterministically names all
+unnamed nodes. Importantly, a BbsBlsSignatureProof2020 is in fact a proof of knowledge
+of an unrevealed <a href="BbsBlsSignature2020">BbsBlsSignature2020</a> enabling the 
+ability to selectively reveal information from the set that was originally signed. 
+Each of the statements produced by the normalizing process for a JSON-LD document featuring a 
+"BbsBlsSignatureProof2020" represent statements that were 
+originally signed in producing the <a href="BbsBlsSignature2020">BbsBlsSignature2020</a> 
+and represent the denomination under which information can be selectively disclosed. 
+The signature mechanism uses Blake2B as the digest for each statement and produces 
+a single output digital signature.
+          </p>
+          <dl>
+            <dt>Status</dt>
+            <dd property="vs:term_status">unstable</dd>
+            <dt>Parent Class</dt>
+            <dd>Signature</dd>
+            <dt>Expected properties</dt>
+            <dd>verificationMethod, proofValue</dd>
+            <dt>Signature Properties</dt>
+            <dd>
+              <dl>
+                <dt>Default Canonicalization Algorithm</dt>
+                <dd>
+<a rel="canonicalizationAlgorithm"
+  href="https://w3id.org/rdf#URDNA2015">
+https://w3id.org/rdf#URDNA2015</a>
+                </dd>
+                <dt>Default Signature Algorithm</dt>
+                <dd>
+<a rel="signatureAlgorithm"
+  href="https://mattrglobal.github.io/bbs-signatures-spec/#name-blindmessagesproofgen">
+  https://mattrglobal.github.io/bbs-signatures-spec/#name-blindmessagesproofgen</a>
+                </dd>
+              </dl>
+            </dd>
+          </dl>
+        </ul>
+        <p>
+A Bbs signature proof is a cryptographic digital proof of knowledge derived from a Bbs signature 
+that works with any pairing friendly elliptic curve, a BbsBls signature proof is one that uses 
+keys from the BLS12-381 curve:
+        </p>
+          <p>
+The example below shows how a basic JSON-LD proof is expressed in a
+JSON-LD snippet. Note that the proof property is directly embedded in the
+object. The signature algorithm specifies how the proof can be generated
+and verified.
+          </p>
+          <pre class="example prettyprint language-jsonld">
+{
+  "@context": ["https://w3id.org/security/v1", "http://json-ld.org/contexts/person.jsonld"]
+  "@type": "Person",
+  "name": "Dave Longley",
+  "homepage": "https://w3id.org/people/dave",
+  "proof": {
+    "type": "BbsBlsSignature2020",
+    "verificationMethod": "https://w3id.org/people/dave/keys/2",
+    "created": "2016-11-05T03:12:54Z",
+    "proofPurpose": "assertionMethod",
+    "proofValue": "AAoD/4XIHpCb/4necmgnauMPaGKoQiTfDmB3Gk+oX99V8qe/Os3X21NNnPrr5QusW1eizom+c5zIMi8uIprRuumLCpN/HpzbTYaYrts+R6wIoB9GtUOcBR3Pwp6avuPK1sO84YStE91pLu5zO64/OsHz2XsqMb3Qo3AL9drfwlhCOh+gzVuEkHtS38TxLvhru/I7BwAAAHSFWEOFEHY4bXwZZf8710RdkN2phd0A3DIi4fq+NMh0Bxx9vmBevt7LnaVln5so20UAAAACOkUnNGzLNxtWPYhS4hiVFf2D3mkQ2LaxaYsjz7Dvc8gz6ucnMMMYFGEsN4DwgrAk3BekfAb40RrzXPRWRWni3LXi4kbGx6BNlWB28L7LKrBBsgi64xALHEWXedU9mxCrz5fENJ3G45cx6Yh7ixHxMQAAAAJhQb1RFEBF0X1bggECt4ipbWwvKLuSECtJ5LmTcDDF4DinW96UfoR3ZZ3F3BR2km+uDWOi1dCT8t/aCmnIPUkM"
+  }
+}
+          </pre>
+      </section>
+
+      <section id="Bls12381G1Key2020" about="https://w3id.org/security#Bls12381G1Key2020"
+      typeof="rdfs:Class">
+        <h3>Bls12381G1Key2020</h3>
+        <p>
+          This class represents a linked data signature key. See <a href="https://w3c-ccg.github.io/ld-cryptosuite-registry/#ed25519">eddsa-ed25519</a>.
+          </p>
+          <dl>
+            <dt>Status</dt>
+            <dd property="vs:term_status">unstable</dd>
+            <dt>Parent Class</dt>
+            <dd>owl:Thing</dd>
+            <dt>Expected properties</dt>
+            <dd>id, type, controller, publicKeyBase58</dd>
+          </dl>
+          <pre class="example prettyprint language-jsonld">
+{
+  "id": "did:example:489398593#test",
+  "type": "Bls12381G1Key2020",
+  "controller": "did:example:489398593",
+  "publicKeyBase58": "4N9Kg9BxmDXtf2QgRH2j1UfFAcQAmgu9Xpwe2fLbSNQHPQHBK5dHrQfFvexvux"
+}
+          </pre>
+      </section>
+
+      <section id="Bls12381G2Key2020" about="https://w3id.org/security#Bls12381G2Key2020"
+      typeof="rdfs:Class">
+        <h3>Bls12381G2Key2020</h3>
+        <p>
+          This class represents a linked data signature key. See <a href="https://w3c-ccg.github.io/ld-cryptosuite-registry/#ed25519">eddsa-ed25519</a>.
+          </p>
+          <dl>
+            <dt>Status</dt>
+            <dd property="vs:term_status">unstable</dd>
+            <dt>Parent Class</dt>
+            <dd>owl:Thing</dd>
+            <dt>Expected properties</dt>
+            <dd>id, type, controller, publicKeyBase58</dd>
+          </dl>
+          <pre class="example prettyprint language-jsonld">
+{
+  "id": "did:example:489398593#test",
+  "type": "Bls12381G2Key2020",
+  "controller": "did:example:489398593",
+  "publicKeyBase58": "oqpWYKaZD9M1Kbe94BVXpr8WTdFBNZyKv48cziTiQUeuhm7sBhCABMyYG4kcMrseC68YTFFgyhiNeBKjzdKk9MiRWuLv5H4FFujQsQK2KTAtzU8qTBiZqBHMmnLF4PL7Ytu"
+}
+          </pre>
+      </section>
+
+      
       
 
       <section id="Key" about="https://w3id.org/security#Key"
