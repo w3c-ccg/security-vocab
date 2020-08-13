@@ -8,6 +8,10 @@
             "JsonWebSignature2020": {
                 "@id": "sec:JsonWebSignature2020"
             },
+            "publicKeyJwk": {
+              "@id": "sec:publicKeyJwk",
+              "@type": "@json"
+            },
             "ethereumAddress": {
                 "@id": "sec:ethereumAddress"
             },
@@ -20,5 +24,3 @@
         }
     ]
 }
-
-
