@@ -20,6 +20,18 @@
             },
             "blockchainAccountId":{
                 "@id": "sec:blockchainAccountId"
+            },
+            "Bls12381G1Key2020":{
+                "@id": "sec:Bls12381G1Key2020"
+            },
+            "Bls12381G2Key2020":{
+                "@id": "sec:Bls12381G2Key2020"
+            },
+            "BbsBlsSignature2020":{
+                "@id": "sec:BbsBlsSignature2020"
+            },
+            "BbsBlsSignatureProof2020":{
+                "@id": "sec:BbsBlsSignatureProof2020"
             }
         }
     ]
