@@ -1,38 +1,92 @@
 {
-    "@context": [
-        {
-            "@version": 1.1
-        },
-        "https://w3id.org/security/v2",
-        {
-            "JsonWebSignature2020": {
-                "@id": "sec:JsonWebSignature2020"
-            },
-            "publicKeyJwk": {
-              "@id": "sec:publicKeyJwk",
-              "@type": "@json"
-            },
-            "ethereumAddress": {
-                "@id": "sec:ethereumAddress"
-            },
-            "publicKeyHex": {
-                "@id": "sec:publicKeyHex"
-            },
-            "blockchainAccountId":{
-                "@id": "sec:blockchainAccountId"
-            },
-            "Bls12381G1Key2020":{
-                "@id": "sec:Bls12381G1Key2020"
-            },
-            "Bls12381G2Key2020":{
-                "@id": "sec:Bls12381G2Key2020"
-            },
-            "BbsBlsSignature2020":{
-                "@id": "sec:BbsBlsSignature2020"
-            },
-            "BbsBlsSignatureProof2020":{
-                "@id": "sec:BbsBlsSignatureProof2020"
+  "@context": [
+    {
+      "@version": 1.1
+    },
+    "https://w3id.org/security/v2",
+    {
+      "JsonWebKey2020": {
+        "@id": "https://w3id.org/security#JsonWebKey2020"
+      },
+      "JsonWebSignature2020": {
+        "@id": "https://w3id.org/security#JsonWebSignature2020"
+      },
+      "Ed25519VerificationKey2020": {
+        "@id": "https://w3id.org/security#Ed25519VerificationKey2020"
+      },
+      "Ed25519Signature2020": {
+        "@id": "https://w3id.org/security#Ed25519Signature2020",
+        "@context": {
+          "@version": 1.1,
+          "@protected": true,
+          "id": "@id",
+          "type": "@type",
+          "challenge": "https://w3id.org/security#challenge",
+          "created": {
+            "@id": "http://purl.org/dc/terms/created",
+            "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+          },
+          "domain": "https://w3id.org/security#domain",
+          "expires": {
+            "@id": "https://w3id.org/security#expiration",
+            "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+          },
+          "nonce": "https://w3id.org/security#nonce",
+          "proofPurpose": {
+            "@id": "https://w3id.org/security#proofPurpose",
+            "@type": "@vocab",
+            "@context": {
+              "@version": 1.1,
+              "@protected": true,
+              "id": "@id",
+              "type": "@type",
+              "assertionMethod": {
+                "@id": "https://w3id.org/security#assertionMethod",
+                "@type": "@id",
+                "@container": "@set"
+              },
+              "authentication": {
+                "@id": "https://w3id.org/security#authenticationMethod",
+                "@type": "@id",
+                "@container": "@set"
+              }
             }
+          },
+          "proofValue": {
+            "@id": "https://w3id.org/security#proofValue",
+            "@type": "https://w3id.org/security#multibase"
+          },
+          "verificationMethod": {
+            "@id": "https://w3id.org/security#verificationMethod",
+            "@type": "@id"
+          }
         }
-    ]
+      },
+      "publicKeyJwk": {
+        "@id": "https://w3id.org/security#publicKeyJwk",
+        "@type": "@json"
+      },
+      "ethereumAddress": {
+        "@id": "https://w3id.org/security#ethereumAddress"
+      },
+      "publicKeyHex": {
+        "@id": "https://w3id.org/security#publicKeyHex"
+      },
+      "blockchainAccountId": {
+        "@id": "https://w3id.org/security#blockchainAccountId"
+      },
+      "Bls12381G1Key2020": {
+        "@id": "https://w3id.org/security#Bls12381G1Key2020"
+      },
+      "Bls12381G2Key2020": {
+        "@id": "https://w3id.org/security#Bls12381G2Key2020"
+      },
+      "BbsBlsSignature2020": {
+        "@id": "https://w3id.org/security#BbsBlsSignature2020"
+      },
+      "BbsBlsSignatureProof2020": {
+        "@id": "https://w3id.org/security#BbsBlsSignatureProof2020"
+      }
+    }
+  ]
 }
