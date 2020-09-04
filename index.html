@@ -38,8 +38,24 @@
           // editors, add as many as you like
           // only "name" is required
           editors:  [
-            { name: "Manu Sporny", url: "http://manu.sporny.org/",
-                company: "Digital Bazaar, Inc.", companyURL: "https://digitalbazaar.com/" },
+{ 
+name: "Manu Sporny", 
+url: "http://manu.sporny.org/",
+company: "Digital Bazaar, Inc.", 
+companyURL: "https://digitalbazaar.com/" 
+},
+{ 
+name: "Orie Steele", 
+url: "https://transmute.industries/",
+company: "Transmute Industries, Inc.", 
+companyURL: "https://transmute.industries/" 
+},
+{ 
+name: "Tobias Looker", 
+url: "https://mattr.global/",
+company: "Mattr", 
+companyURL: "https://mattr.global/" 
+},
           ],
 
           // authors, add as many as you like.
@@ -609,6 +625,106 @@ and verified.
           </pre>
       </section>
 
+<section id="Ed25519VerificationKey2020">
+
+<h3>Ed25519VerificationKey2020</h3>
+<p>
+A linked data proof suite verification method <code>type</code> 
+used with <code>Ed25519Signature2020</code>.
+</p>
+
+<p class="advisement">
+This suite is unstable and subject to change.
+</p>
+
+<dl>
+<dt>Status</dt>
+<dd property="vs:term_status">unstable</dd>
+<dt>Parent Class</dt>
+<dd>owl:Thing</dd>
+<dt>Expected properties</dt>
+<dd>id, type, controller, publicKeyMultibase</dd>
+</dl>
+</section>
+
+<section id="Ed25519Signature2020">
+
+<h3>Ed25519Signature2020</h3>
+<p>
+A linked data proof suite proof <code>type</code> 
+used with the verification method type <code>Ed25519VerificationKey2020</code>.
+</p>
+
+<p class="advisement">
+This suite is unstable and subject to change.
+</p>
+
+<dl>
+<dt>Status</dt>
+<dd property="vs:term_status">unstable</dd>
+<dt>Parent Class</dt>
+<dd>Signature</dd>
+<dt>Expected properties</dt>
+<dd>verificationMethod, proofValue</dd>
+<dt>Signature Properties</dt>
+<dd>
+<dl>
+<dt>Default Canonicalization Algorithm</dt>
+<dd>
+<a rel="canonicalizationAlgorithm"
+href="https://w3id.org/rdf#URDNA2015">
+https://w3id.org/rdf#URDNA2015</a>
+</dd>
+<dt>Default Signature Algorithm</dt>
+<dd>
+<a rel="signatureAlgorithm"
+href="https://tools.ietf.org/html/rfc8032">
+https://tools.ietf.org/html/rfc8032</a>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+  
+
+<section id="JsonWebKey2020">
+
+<h3>JsonWebKey2020</h3>
+<p>
+A linked data proof suite verification method <code>type</code> 
+used with <code>JsonWebSignature2020</code>.
+</p>
+
+<p class="advisement">
+This suite is unstable and subject to change.
+</p>
+
+<p>
+See also: <a href="https://github.com/w3c-ccg/lds-jws2020">w3c-ccg/lds-jws2020</a>.
+</p>
+<dl>
+<dt>Status</dt>
+<dd property="vs:term_status">unstable</dd>
+<dt>Parent Class</dt>
+<dd>owl:Thing</dd>
+<dt>Expected properties</dt>
+<dd>id, type, controller, publicKeyJwk</dd>
+</dl>
+      
+<pre class="example prettyprint language-jsonld">
+{
+  "id": "did:example:123#_Qq0UL2Fq651Q0Fjd6TvnYE-faHiOpRlPVQcY_-tA4A",
+  "type": "JsonWebKey2020",
+  "controller": "did:example:123",
+  "publicKeyJwk": {
+    "kty": "OKP",
+    "crv": "Ed25519",
+    "x": "VCpo2LMLhn6iWku8MKvSLg2ZAoC-nlOyPVQaO3FxVeQ"
+  }
+}
+</pre>
+      </section>
+
       <section id="JsonWebSignature2020">
 
         <h3>JsonWebSignature2020</h3>
@@ -619,6 +735,13 @@ Normalization specification, which deterministically names all
 unnamed nodes. The default signature mechanism
 uses a SHA-256 digest and JWS to perform the digital signature.
           </p>
+<p class="advisement">
+This suite is unstable and subject to change.
+</p>
+
+<p>
+See also: <a href="https://github.com/w3c-ccg/lds-jws2020">w3c-ccg/lds-jws2020</a>.
+</p>
           <dl>
             <dt>Status</dt>
             <dd property="vs:term_status">stable</dd>
