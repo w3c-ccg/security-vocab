@@ -519,6 +519,79 @@ and verified.
           </pre>
       </section>
 
+
+      <section id="MerkleProof2019" about="https://w3id.org/security#MerkleProof2019">
+
+        <h3>MerkleProof2019</h3>
+          <p>
+A Linked Data signature is used for digital signatures on RDF Datasets.
+The default canonicalization mechanism is specified in the RDF Dataset
+Normalization specification, which effectively deterministically names all
+unnamed nodes. The default signature mechanism
+uses a SHA-256 digest and ECDSA to perform the digital signature. More information at
+              <a href="https://w3c-ccg.github.io/lds-merkle-proof-2019/">https://w3c-ccg.github.io/lds-merkle-proof-2019/</a>
+          </p>
+          <dl>
+            <dt>Status</dt>
+            <dd property="vs:term_status">stable</dd>
+            <dt>Parent Class</dt>
+            <dd>LinkedDataSignature</dd>
+            <dt>Expected properties</dt>
+            <dd>proofValue</dd>
+            <dt>Signature Properties</dt>
+            <dd>
+              <dl>
+                <dt>Default Canonicalization Algorithm</dt>
+                <dd>
+<a rel="canonicalizationAlgorithm"
+  href="https://w3id.org/security#GCA2015">https://w3id.org/security#GCA2015</a>
+                </dd>
+                <dt>Default Signature Algorithm</dt>
+                <dd>
+<a rel="signatureAlgorithm"
+  href="http://www.w3.org/2000/09/xmldsig#rsa-sha256">
+http://www.w3.org/2000/09/xmldsig#rsa-sha256</a>
+                </dd>
+              </dl>
+            </dd>
+          </dl>
+          <p>
+The example below shows how a basic JSON-LD signature is expressed in a
+JSON-LD snippet. Note that the proof property is directly embedded in the
+object. The signature algorithm specifies how the signature can be generated
+and verified.
+          </p>
+          <pre class="example prettyprint language-jsonld">
+{
+  "@context": [
+    "https://www.w3.org/2018/credentials/v1",
+    "https://www.blockcerts.org/schema/3.0-alpha/context.json",
+    "https://www.w3.org/2018/credentials/examples/v1"
+  ],
+  "id": "urn:uuid:bbba8553-8ec1-445f-82c9-a57251dd731c",
+  "type": [
+    "VerifiableCredential",
+    "BlockcertsCredential"
+  ],
+  "issuer": "did:example:23adb1f712ebc6f1c276eba4dfa",
+  "issuanceDate": "2010-01-01T19:33:24Z",
+  "credentialSubject": {
+    "id": "did:example:ebfeb1f712ebc6f1c276e12ec21",
+    "alumniOf": {
+      "id": "did:example:c276e12ec21ebfeb1f712ebc6f1"
+    }
+  },
+  "proof": {
+    "type": "MerkleProof2019",
+    "created": "2020-10-15T15:16:52.191052",
+    "proofValue": "zMcm4LfQFUZkWZyLpVrzYzaHRssD3xGQ6Yh6nEhErjfAqnxDWo7gBawdhynnbiucoqqwye54oTs5p6frH385nVvBf2UXMgRVtBZLq6tHN1MY1hQBMBBtXbWbYzj99GotAJRs7PxcvQmUQKHs8hkokZhgw92CNAtvDn2jeycvuyFPtWorxZaGP23mDkgwpberKmAqcPcsUFNooGe1UkQj8wws8D9pdpAVmuKf5Zo78iq1tUWSUdGwN9sK57SQP6YTtL59b7WUK1NEHD1GL8o5Z2mY6MnxuxfiqkpjepaPVqTPfgmaCuS",
+    "proofPurpose": "assertionMethod",
+    "verificationMethod": "ecdsa-koblitz-pubkey:0x7e30a37763e6Ba1fFeDE1750bBeFB4c60b17a1B3"
+  }
+}
+          </pre>
+      </section>
+
       <section id="Ed25519VerificationKey2018" about="https://w3id.org/security#Ed25519VerificationKey2018"
       typeof="rdfs:Class">
         <h3>Ed25519VerificationKey2018</h3>
