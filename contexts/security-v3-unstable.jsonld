@@ -75,6 +75,9 @@
       "blockchainAccountId": {
         "@id": "https://w3id.org/security#blockchainAccountId"
       },
+      "MerkleProof2019": {
+        "@id": "https://w3id.org/security#MerkleProof2019"
+      },
       "Bls12381G1Key2020": {
         "@id": "https://w3id.org/security#Bls12381G1Key2020"
       },
