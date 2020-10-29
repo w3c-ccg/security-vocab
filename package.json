@@ -23,6 +23,7 @@
     "eslint": "^6.8.0",
     "eslint-config-digitalbazaar": "^2.4.0",
     "json-loader": "^0.5.7",
+    "jsonld-lint": "^0.3.0",
     "rollup": "^1.11.3",
     "rollup-plugin-commonjs": "^9.3.4",
     "webpack": "^4.30.0",
@@ -31,7 +32,7 @@
   "scripts": {
     "prepublish": "npm run build",
     "build": "webpack && rollup -c",
-    "lint": "eslint \"**/*.js\"",
+    "lint": "eslint \"**/*.js\" && jsonld-lint contexts",
     "lint:fix": "eslint \"**/*.js\" --fix",
     "test": "echo 'there are no tests...'"
   }
