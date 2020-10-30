@@ -836,6 +836,11 @@ combined-stream@^1.0.6, combined-stream@~1.0.6:
   dependencies:
     delayed-stream "~1.0.0"
 
+commander@6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-6.0.0.tgz#2b270da94f8fb9014455312f829a1129dbf8887e"
+  integrity sha512-s7EA+hDtTYNhuXkTlhqew4txMZVdszBmKWSPEMxGr8ru8JXR7bLUFIAtPhcSuFdJQ0ILMxnJi8GkQL0yvDy/YA==
+
 commander@^2.20.0:
   version "2.20.3"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
@@ -2117,7 +2122,15 @@ jsonc-parser@^2.2.1:
   resolved "https://registry.yarnpkg.com/jsonc-parser/-/jsonc-parser-2.3.1.tgz#59549150b133f2efacca48fe9ce1ec0659af2342"
   integrity sha512-H8jvkz1O50L3dMZCsLqiuB2tA7muqbSg1AtGEkN0leAqGjsUzDJir3Zwr02BhqdcITPg3ei3mZ+HjMocAknhhg==
 
-jsonld-lint@^0.3.0:
+jsonld-lint-cli@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/jsonld-lint-cli/-/jsonld-lint-cli-0.3.0.tgz#5162684c46a84ada7cfeeae8a79c3964deb94e17"
+  integrity sha512-+PdHFppgBm1CSuKuZvVhRhG4kZh1dWWPhkAAKYfHw5VL4sksnfJJqZ3V0+5uABFqoAFQPtKzCVSQkd7WvbXI4Q==
+  dependencies:
+    commander "6.0.0"
+    jsonld-lint "0.3.0"
+
+jsonld-lint@0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/jsonld-lint/-/jsonld-lint-0.3.0.tgz#1921cf7a02f208b0328d0917a2d041a0bcd8b1c5"
   integrity sha512-t213onWKEKLMPQHJn6AKbc9PlNnhsEFb/JwyDaeQkkrGAiN3NMkDfwFjLJH2tpw5Swkn3RMGSoljXNKYmW8Ygg==
