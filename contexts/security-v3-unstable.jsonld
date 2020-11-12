@@ -220,7 +220,7 @@
     "cipherData": "https://w3id.org/security#cipherData",
     "cipherKey": "https://w3id.org/security#cipherKey",
     "created": {"@id": "http://purl.org/dc/terms/created", "@type": "http://www.w3.org/2001/XMLSchema#dateTime"},
-    "creator": "http://purl.org/dc/terms/createdcreator",
+    "creator": {"@id": "http://purl.org/dc/terms/creator", "@type": "@id"},
     "digestAlgorithm": "https://w3id.org/security#digestAlgorithm",
     "digestValue": "https://w3id.org/security#digestValue",
     "domain": "https://w3id.org/security#domain",
