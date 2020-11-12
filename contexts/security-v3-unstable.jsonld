@@ -339,6 +339,9 @@
         "@version": 1.1,
         "@protected": true,
 
+        "sec": "https://w3id.org/security#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+
         "challenge": "sec:challenge",
         "created": {"@id": "http://purl.org/dc/terms/created", "@type": "xsd:dateTime"},
         "domain": "sec:domain",
