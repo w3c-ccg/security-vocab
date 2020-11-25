@@ -540,7 +540,6 @@
           }
         }
       },
-    "proofValue": "https://w3id.org/security#proofValue",
     "referenceId": "https://w3id.org/security#referenceId",
     "unwrappedKey": "https://w3id.org/security#unwrappedKey",
     "verificationMethod": {"@id": "https://w3id.org/security#verificationMethod", "@type": "@id"},
