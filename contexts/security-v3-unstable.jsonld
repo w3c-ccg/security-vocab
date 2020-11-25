@@ -214,15 +214,12 @@
         "id": "@id",
         "type": "@type",
 
-        "sec": "https://w3id.org/security#",
-        "xsd": "http://www.w3.org/2001/XMLSchema#",
-
-        "challenge": "sec:challenge",
-        "created": {"@id": "http://purl.org/dc/terms/created", "@type": "xsd:dateTime"},
-        "domain": "sec:domain",
-        "expires": {"@id": "sec:expiration", "@type": "xsd:dateTime"},
-        "jws": "sec:jws",
-        "nonce": "sec:nonce",
+        "challenge": "https://w3id.org/security#challenge",
+        "created": {"@id": "http://purl.org/dc/terms/created", "@type": "http://www.w3.org/2001/XMLSchema#:dateTime"},
+        "domain": "https://w3id.org/security#domain",
+        "expires": {"@id": "https://w3id.org/security#expiration", "@type": "http://www.w3.org/2001/XMLSchema#:dateTime"},
+        "jws": "https://w3id.org/security#jws",
+        "nonce": "https://w3id.org/security#nonce",
         "proofPurpose": {
             "@id": "https://w3id.org/security#proofPurpose",
             "@type": "@vocab",
@@ -258,8 +255,8 @@
               }
             }
           },
-        "proofValue": "sec:proofValue",
-        "verificationMethod": {"@id": "sec:verificationMethod", "@type": "@id"}
+        "proofValue": "https://w3id.org/security#proofValue",
+        "verificationMethod": {"@id": "https://w3id.org/security#verificationMethod", "@type": "@id"}
       }
     },
     "EncryptedMessage": "https://w3id.org/security#EncryptedMessage",
@@ -310,15 +307,12 @@
         "id": "@id",
         "type": "@type",
 
-        "sec": "https://w3id.org/security#",
-        "xsd": "http://www.w3.org/2001/XMLSchema#",
-
-        "challenge": "sec:challenge",
-        "created": {"@id": "http://purl.org/dc/terms/created", "@type": "xsd:dateTime"},
-        "domain": "sec:domain",
-        "expires": {"@id": "sec:expiration", "@type": "xsd:dateTime"},
-        "jws": "sec:jws",
-        "nonce": "sec:nonce",
+        "challenge": "https://w3id.org/security#challenge",
+        "created": {"@id": "http://purl.org/dc/terms/created", "@type": "http://www.w3.org/2001/XMLSchema#:dateTime"},
+        "domain": "https://w3id.org/security#domain",
+        "expires": {"@id": "https://w3id.org/security#expiration", "@type": "http://www.w3.org/2001/XMLSchema#:dateTime"},
+        "jws": "https://w3id.org/security#jws",
+        "nonce": "https://w3id.org/security#nonce",
         "proofPurpose": {
             "@id": "https://w3id.org/security#proofPurpose",
             "@type": "@vocab",
@@ -354,8 +348,8 @@
               }
             }
           },
-        "proofValue": "sec:proofValue",
-        "verificationMethod": {"@id": "sec:verificationMethod", "@type": "@id"}
+        "proofValue": "https://w3id.org/security#proofValue",
+        "verificationMethod": {"@id": "https://w3id.org/security#verificationMethod", "@type": "@id"}
       }
     },
     "EcdsaSecp256r1Signature2019": {
@@ -366,15 +360,12 @@
         "id": "@id",
         "type": "@type",
 
-        "sec": "https://w3id.org/security#",
-        "xsd": "http://www.w3.org/2001/XMLSchema#",
-
-        "challenge": "sec:challenge",
-        "created": {"@id": "http://purl.org/dc/terms/created", "@type": "xsd:dateTime"},
-        "domain": "sec:domain",
-        "expires": {"@id": "sec:expiration", "@type": "xsd:dateTime"},
-        "jws": "sec:jws",
-        "nonce": "sec:nonce",
+        "challenge": "https://w3id.org/security#challenge",
+        "created": {"@id": "http://purl.org/dc/terms/created", "@type": "http://www.w3.org/2001/XMLSchema#:dateTime"},
+        "domain": "https://w3id.org/security#domain",
+        "expires": {"@id": "https://w3id.org/security#expiration", "@type": "http://www.w3.org/2001/XMLSchema#:dateTime"},
+        "jws": "https://w3id.org/security#jws",
+        "nonce": "https://w3id.org/security#nonce",
         "proofPurpose": {
             "@id": "https://w3id.org/security#proofPurpose",
             "@type": "@vocab",
@@ -410,8 +401,8 @@
               }
             }
           },
-        "proofValue": "sec:proofValue",
-        "verificationMethod": {"@id": "sec:verificationMethod", "@type": "@id"}
+        "proofValue": "https://w3id.org/security#proofValue",
+        "verificationMethod": {"@id": "https://w3id.org/security#verificationMethod", "@type": "@id"}
       }
     },
     "EcdsaSecp256k1VerificationKey2019": "https://w3id.org/security#EcdsaSecp256k1VerificationKey2019",
@@ -427,15 +418,12 @@
       "@context": {
         "@protected": true,
 
-        "sec": "https://w3id.org/security#",
-        "xsd": "http://www.w3.org/2001/XMLSchema#",
-
-        "challenge": "sec:challenge",
-        "created": {"@id": "http://purl.org/dc/terms/created", "@type": "xsd:dateTime"},
-        "domain": "sec:domain",
-        "expires": {"@id": "sec:expiration", "@type": "xsd:dateTime"},
-        "jws": "sec:jws",
-        "nonce": "sec:nonce",
+        "challenge": "https://w3id.org/security#challenge",
+        "created": {"@id": "http://purl.org/dc/terms/created", "@type": "http://www.w3.org/2001/XMLSchema#:dateTime"},
+        "domain": "https://w3id.org/security#domain",
+        "expires": {"@id": "https://w3id.org/security#expiration", "@type": "http://www.w3.org/2001/XMLSchema#:dateTime"},
+        "jws": "https://w3id.org/security#jws",
+        "nonce": "https://w3id.org/security#nonce",
         "proofPurpose": {
             "@id": "https://w3id.org/security#proofPurpose",
             "@type": "@vocab",
@@ -471,8 +459,8 @@
               }
             }
           },
-        "proofValue": "sec:proofValue",
-        "verificationMethod": {"@id": "sec:verificationMethod", "@type": "@id"}
+        "proofValue": "https://w3id.org/security#proofValue",
+        "verificationMethod": {"@id": "https://w3id.org/security#verificationMethod", "@type": "@id"}
       }
     },
     "RsaVerificationKey2018": "https://w3id.org/security#RsaVerificationKey2018",
@@ -496,8 +484,8 @@
     "ciphertext": "https://w3id.org/security#ciphertext",
     "controller": {"@id": "https://w3id.org/security#controller", "@type": "@id"},
     "delegator": {"@id": "https://w3id.org/security#delegator", "@type": "@id"},
-    "equihashParameterK": {"@id": "https://w3id.org/security#equihashParameterK", "@type": "xsd:integer"},
-    "equihashParameterN": {"@id": "https://w3id.org/security#equihashParameterN", "@type": "xsd:integer"},
+    "equihashParameterK": {"@id": "https://w3id.org/security#equihashParameterK", "@type": "http://www.w3.org/2001/XMLSchema#:integer"},
+    "equihashParameterN": {"@id": "https://w3id.org/security#equihashParameterN", "@type": "http://www.w3.org/2001/XMLSchema#:integer"},
     "invocationTarget": {"@id": "https://w3id.org/security#invocationTarget", "@type": "@id"},
     "invoker": {"@id": "https://w3id.org/security#invoker", "@type": "@id"},
     "jws": "https://w3id.org/security#jws",
