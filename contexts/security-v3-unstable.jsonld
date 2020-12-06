@@ -33,6 +33,7 @@
           "@id": "https://w3id.org/security#proofPurpose",
           "@type": "@vocab",
           "@context": {
+            "@version": 1.1,
             "@protected": true,
             "id": "@id",
             "type": "@type",
@@ -112,6 +113,7 @@
           "@id": "https://w3id.org/security#proofPurpose",
           "@type": "@vocab",
           "@context": {
+            "@version": 1.1,
             "@protected": true,
             "id": "@id",
             "type": "@type",
@@ -166,6 +168,7 @@
           "@id": "https://w3id.org/security#proofPurpose",
           "@type": "@vocab",
           "@context": {
+            "@version": 1.1,
             "@protected": true,
             "id": "@id",
             "type": "@type",
@@ -606,6 +609,7 @@
       "@id": "https://w3id.org/security#proofPurpose",
       "@type": "@vocab",
       "@context": {
+        "@version": 1.1,
         "@protected": true,
         "id": "@id",
         "type": "@type",
