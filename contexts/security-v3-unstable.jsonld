@@ -33,6 +33,7 @@
           "@id": "https://w3id.org/security#proofPurpose",
           "@type": "@vocab",
           "@context": {
+            "@version": 1.1,
             "@protected": true,
             "id": "@id",
             "type": "@type",
@@ -112,6 +113,7 @@
           "@id": "https://w3id.org/security#proofPurpose",
           "@type": "@vocab",
           "@context": {
+            "@version": 1.1,
             "@protected": true,
             "id": "@id",
             "type": "@type",
@@ -166,6 +168,7 @@
           "@id": "https://w3id.org/security#proofPurpose",
           "@type": "@vocab",
           "@context": {
+            "@version": 1.1,
             "@protected": true,
             "id": "@id",
             "type": "@type",
@@ -216,12 +219,12 @@
         "challenge": "https://w3id.org/security#challenge",
         "created": {
           "@id": "http://purl.org/dc/terms/created",
-          "@type": "http://www.w3.org/2001/XMLSchema#:dateTime"
+          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
         },
         "domain": "https://w3id.org/security#domain",
         "expires": {
           "@id": "https://w3id.org/security#expiration",
-          "@type": "http://www.w3.org/2001/XMLSchema#:dateTime"
+          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
         },
         "jws": "https://w3id.org/security#jws",
         "nonce": "https://w3id.org/security#nonce",
@@ -333,12 +336,12 @@
         "challenge": "https://w3id.org/security#challenge",
         "created": {
           "@id": "http://purl.org/dc/terms/created",
-          "@type": "http://www.w3.org/2001/XMLSchema#:dateTime"
+          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
         },
         "domain": "https://w3id.org/security#domain",
         "expires": {
           "@id": "https://w3id.org/security#expiration",
-          "@type": "http://www.w3.org/2001/XMLSchema#:dateTime"
+          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
         },
         "jws": "https://w3id.org/security#jws",
         "nonce": "https://w3id.org/security#nonce",
@@ -395,12 +398,12 @@
         "challenge": "https://w3id.org/security#challenge",
         "created": {
           "@id": "http://purl.org/dc/terms/created",
-          "@type": "http://www.w3.org/2001/XMLSchema#:dateTime"
+          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
         },
         "domain": "https://w3id.org/security#domain",
         "expires": {
           "@id": "https://w3id.org/security#expiration",
-          "@type": "http://www.w3.org/2001/XMLSchema#:dateTime"
+          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
         },
         "jws": "https://w3id.org/security#jws",
         "nonce": "https://w3id.org/security#nonce",
@@ -462,12 +465,12 @@
         "challenge": "https://w3id.org/security#challenge",
         "created": {
           "@id": "http://purl.org/dc/terms/created",
-          "@type": "http://www.w3.org/2001/XMLSchema#:dateTime"
+          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
         },
         "domain": "https://w3id.org/security#domain",
         "expires": {
           "@id": "https://w3id.org/security#expiration",
-          "@type": "http://www.w3.org/2001/XMLSchema#:dateTime"
+          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
         },
         "jws": "https://w3id.org/security#jws",
         "nonce": "https://w3id.org/security#nonce",
@@ -606,6 +609,7 @@
       "@id": "https://w3id.org/security#proofPurpose",
       "@type": "@vocab",
       "@context": {
+        "@version": 1.1,
         "@protected": true,
         "id": "@id",
         "type": "@type",
