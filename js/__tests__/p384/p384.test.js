@@ -40,6 +40,22 @@ const documentLoader = url => {
     };
   }
 
+  if(url === 'https://w3id.org/security/v1') {
+    return {
+      documentUrl: url,
+      document: JSON.parse(
+        fs
+          .readFileSync(
+            path.resolve(
+              __dirname,
+              '../../../contexts/security-v1.jsonld'
+            )
+          )
+          .toString()
+      ),
+    };
+  }
+
   if(url === 'https://w3id.org/security/v2') {
     return {
       documentUrl: url,
@@ -48,20 +64,42 @@ const documentLoader = url => {
           .readFileSync(
             path.resolve(
               __dirname,
-              '../../../contexts/security-v3-unstable.jsonld'
+              '../../../contexts/security-v2.jsonld'
             )
           )
           .toString()
       ),
     };
   }
+
+  if(url === 'https://www.w3.org/ns/did/v1') {
+    return {
+      documentUrl: url,
+      document: require('../../__fixtures__/contexts/did-v1.json'),
+    };
+  }
+
+  if(
+    url.indexOf(
+      'did:key:zACHdsDxFYhAtvHaBEoQbRwjvfBmnMTojArVxjFdTYgyXsw11YiNqcwK1VkYuKj7P9YSoCzXYL1WX8Z1GAHYinztHn9z91oerTi1fp6pUGEr7BPJ562vSiL93NHJCM81JS8j19rT'
+    ) === 0
+  ) {
+    const didDoc =
+      didKeyFixture[0].resolution['application/did+json'].didDocument;
+
+    return {
+      documentUrl: url,
+      document: didDoc,
+    };
+  }
+
   console.error(url);
   throw new Error('Unsupported context ' + url);
 };
 
 // this test is broken, JsonWebSignature2020
 // suite needs to be updated.
-describe.skip('P384', () => {
+describe('P384', () => {
 
   it('can issue and verify', async () => {
     const key = await JsonWebKey.from(k0);
@@ -84,16 +122,12 @@ describe.skip('P384', () => {
       documentLoader
     });
 
-    console.log(JSON.stringify(verifiableCredential, null, 2));
-
     const result = await vcld.verifyCredential({
       credential: verifiableCredential,
       suite: new JsonWebSignature(),
       documentLoader,
     });
 
-    // console.log(verifiableCredential, result)
-
-    console.log(JSON.stringify(result, null, 2));
+    expect(result.verified).toBe(true);
   });
 });
