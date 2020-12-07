@@ -5,15 +5,15 @@ const jsigs = require('jsonld-signatures');
 
 const fs = require('fs');
 const path = require('path');
-const { AssertionProofPurpose } = jsigs.purposes;
+const {AssertionProofPurpose} = jsigs.purposes;
 
 const didKeyFixture = require('../../__fixtures__/did-key-ed25519.json');
 const k0 = didKeyFixture[0].keypair['application/did+ld+json'];
 k0.id = k0.controller + k0.id;
 
-
 const documentLoader = url => {
-  if(url === 'https://w3id.org/security/v2') {
+
+  if(url === 'https://w3id.org/security/v3-unstable') {
     return {
       documentUrl: url,
       document: JSON.parse(
@@ -22,6 +22,38 @@ const documentLoader = url => {
             path.resolve(
               __dirname,
               '../../../contexts/security-v3-unstable.jsonld'
+            )
+          )
+          .toString()
+      ),
+    };
+  }
+
+  if(url === 'https://w3id.org/security/v2') {
+    return {
+      documentUrl: url,
+      document: JSON.parse(
+        fs
+          .readFileSync(
+            path.resolve(
+              __dirname,
+              '../../../contexts/security-v2.jsonld'
+            )
+          )
+          .toString()
+      ),
+    };
+  }
+
+  if(url === 'https://w3id.org/security/v1') {
+    return {
+      documentUrl: url,
+      document: JSON.parse(
+        fs
+          .readFileSync(
+            path.resolve(
+              __dirname,
+              '../../../contexts/security-v1.jsonld'
             )
           )
           .toString()
@@ -53,14 +85,14 @@ it('can sign and verify', async () => {
 
   const signedDocument = await jsigs.sign(
     {
-        '@context': {
-          schema: 'http://schema.org/',
-          name: 'schema:name',
-          homepage: 'schema:url',
-        },
-        name: 'Orie Steele',
-        homepage: 'https://en.wikipedia.org/wiki/Orie_Steele',
-      },
+      '@context': ['https://w3id.org/security/v3-unstable', {
+        schema: 'http://schema.org/',
+        name: 'schema:name',
+        homepage: 'schema:url',
+      }],
+      name: 'Orie Steele',
+      homepage: 'https://en.wikipedia.org/wiki/Orie_Steele',
+    },
     {
       suite,
       purpose: new AssertionProofPurpose(),
@@ -74,5 +106,5 @@ it('can sign and verify', async () => {
     purpose: new AssertionProofPurpose()
   });
 
-  expect(result.verified).toBe(true); 
+  expect(result.verified).toBe(true);
 });
