@@ -1,0 +1,22 @@
+{
+    "@context": [
+      "https://www.w3.org/ns/did/v1"
+    ],
+    "id": "did:example:ghi",
+    "verificationMethod": [
+      {
+        "id": "did:example:ghi#123",
+        "type": "JsonWebKey2020",
+        "controller": "did:example:ghi",
+        "publicKeyJwk": {
+          "kty": "EC",
+          "crv": "P-384",
+          "x": "xUR9xMCEiRd4j4X9zEu2p61mDmNDoAZnwPmMSnRLxvK7fYuJkNFTm7yB1lTr744c",
+          "y": "mVUlJvS8qMwO2JHI38L1HNY2e3cnCReom1MgV_5jEZOWgW4MeayBtgUIEcCFD40U"
+        }
+      }
+    ],
+    "assertionMethod": [
+      "#123"
+    ]
+  }

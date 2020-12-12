@@ -1,15 +1,17 @@
 /* eslint-disable max-len */
-const {Ed25519KeyPair} = require('@transmute/did-key-ed25519');
-const {Ed25519Signature2018} = require('@transmute/ed25519-signature-2018');
-const jsigs = require('jsonld-signatures');
+const {
+  Bls12381G2KeyPair,
+  BbsBlsSignature2020
+} = require('@mattrglobal/jsonld-signatures-bbs');
 
+const jsigs = require('jsonld-signatures');
 const {AssertionProofPurpose} = jsigs.purposes;
 
 const {documentLoader} = require('../../__fixtures__/documentLoader');
 
 it('can sign and verify', async () => {
-  const key = await Ed25519KeyPair.from(require('../../__fixtures__/keys/ed25519.json'));
-  const suite = new Ed25519Signature2018({
+  const key = await Bls12381G2KeyPair.from(require('../../__fixtures__/keys/bls12381-g2.json'));
+  const suite = new BbsBlsSignature2020({
     key,
   });
 
@@ -32,7 +34,7 @@ it('can sign and verify', async () => {
 
   const result = await jsigs.verify(signedDocument, {
     documentLoader,
-    suite: new Ed25519Signature2018(),
+    suite: new BbsBlsSignature2020(),
     purpose: new AssertionProofPurpose()
   });
 
