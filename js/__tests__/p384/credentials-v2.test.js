@@ -13,10 +13,7 @@ const vcld = vcjs.ld;
 const credentialTemplate = require('../../__fixtures__/credentials/p384/credentialTemplate.json');
 let verifiableCredential;
 
-// this test is broken, JsonWebSignature2020
-// suite needs to be updated.
 describe('P384', () => {
-
   it('can issue and verify', async () => {
     const key = await JsonWebKey.from(require('../../__fixtures__/keys/p384.json'));
     const suite = new JsonWebSignature({
