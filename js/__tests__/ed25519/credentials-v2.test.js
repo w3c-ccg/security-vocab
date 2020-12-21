@@ -11,7 +11,9 @@ const credentialTemplate = require('../../__fixtures__/credentials/ed25519/crede
 let verifiableCredential;
 
 it('can issue and verify', async () => {
-  const key = await Ed25519KeyPair.from(require('../../__fixtures__/keys/ed25519.json'));
+  const key = await Ed25519KeyPair.from(
+    require('../../__fixtures__/keys/ed25519.json')
+  );
   const suite = new Ed25519Signature2018({
     key,
   });
@@ -28,7 +30,7 @@ it('can issue and verify', async () => {
       },
     },
     suite,
-    documentLoader
+    documentLoader,
   });
 
   const result = await vcld.verifyCredential({
@@ -36,7 +38,5 @@ it('can issue and verify', async () => {
     suite: new Ed25519Signature2018(),
     documentLoader,
   });
-
-  // console.log(JSON.stringify(verifiableCredential, null, 2))
   expect(result.verified).toBe(true);
 });

@@ -15,7 +15,9 @@ let verifiableCredential;
 
 describe('P384', () => {
   it('can issue and verify', async () => {
-    const key = await JsonWebKey.from(require('../../__fixtures__/keys/p384.json'));
+    const key = await JsonWebKey.from(
+      require('../../__fixtures__/keys/p384.json')
+    );
     const suite = new JsonWebSignature({
       key,
     });
@@ -32,7 +34,7 @@ describe('P384', () => {
         },
       },
       suite,
-      documentLoader
+      documentLoader,
     });
 
     const result = await vcld.verifyCredential({
@@ -40,7 +42,7 @@ describe('P384', () => {
       suite: new JsonWebSignature(),
       documentLoader,
     });
-    // console.log(JSON.stringify(verifiableCredential, null, 2))
+
     expect(result.verified).toBe(true);
   });
 });

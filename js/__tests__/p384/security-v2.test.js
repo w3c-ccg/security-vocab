@@ -10,18 +10,23 @@ const {AssertionProofPurpose} = jsigs.purposes;
 const {documentLoader} = require('../../__fixtures__/documentLoader');
 
 it('can sign and verify', async () => {
-  const key = await JsonWebKey.from(require('../../__fixtures__/keys/p384.json'));
+  const key = await JsonWebKey.from(
+    require('../../__fixtures__/keys/p384.json')
+  );
   const suite = new JsonWebSignature({
     key,
   });
 
   const signedDocument = await jsigs.sign(
     {
-      '@context': ['https://w3id.org/security/v3-unstable', {
-        schema: 'http://schema.org/',
-        name: 'schema:name',
-        homepage: 'schema:url',
-      }],
+      '@context': [
+        'https://w3id.org/security/v3-unstable',
+        {
+          schema: 'http://schema.org/',
+          name: 'schema:name',
+          homepage: 'schema:url',
+        },
+      ],
       name: 'Orie Steele',
       homepage: 'https://en.wikipedia.org/wiki/Orie_Steele',
     },
@@ -35,7 +40,7 @@ it('can sign and verify', async () => {
   const result = await jsigs.verify(signedDocument, {
     documentLoader,
     suite: new JsonWebSignature(),
-    purpose: new AssertionProofPurpose()
+    purpose: new AssertionProofPurpose(),
   });
 
   expect(result.verified).toBe(true);

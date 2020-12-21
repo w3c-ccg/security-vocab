@@ -15,10 +15,14 @@ let verifiableCredential;
 const {documentLoader} = require('../../__fixtures__/documentLoader');
 
 describe('BBS', () => {
-
   it('can issue, verify', async () => {
-    const key = await Bls12381G2KeyPair.from(require('../../__fixtures__/keys/bls12381-g2.json'));
-    const suite = new BbsBlsSignature2020({key, date: credentialTemplate.issuanceDate});
+    const key = await Bls12381G2KeyPair.from(
+      require('../../__fixtures__/keys/bls12381-g2.json')
+    );
+    const suite = new BbsBlsSignature2020({
+      key,
+      date: credentialTemplate.issuanceDate,
+    });
     suite.date = credentialTemplate.issuanceDate;
     verifiableCredential = await vcld.issue({
       credential: {
@@ -32,7 +36,7 @@ describe('BBS', () => {
         },
       },
       suite,
-      documentLoader
+      documentLoader,
     });
 
     const credentialVerified = await vcld.verifyCredential({
@@ -40,12 +44,10 @@ describe('BBS', () => {
       suite: new BbsBlsSignature2020({}),
       documentLoader,
     });
-    // console.log(JSON.stringify(verifiableCredential, null, 2))
     expect(credentialVerified.verified).toBe(true);
   });
 
   it('can derive, present', async () => {
-    //Derive a proof
     const deriveProofFrame = require('../../__fixtures__/credentials/bls12381-g2/deriveProofFrame.json');
     const derivedProofCredential = await deriveProof(
       verifiableCredential,
@@ -55,14 +57,11 @@ describe('BBS', () => {
         documentLoader,
       }
     );
-    // console.log(JSON.stringify(derivedProofCredential, null, 2))
     const credentialVerified = await vcld.verifyCredential({
       credential: {...derivedProofCredential},
       suite: new BbsBlsSignatureProof2020({}),
       documentLoader,
     });
-    // console.log(JSON.stringify(credentialVerified, null, 2))
     expect(credentialVerified.verified).toBe(true);
   });
-
 });
