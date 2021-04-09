@@ -167,6 +167,29 @@ until it is ratified as an official document via the World Wide Web Consortium.
         </pre>
       </section>
 
+      <section id="EcdsaSecp256k1RecoverySignature2020" about="https://identity.foundation/EcdsaSecp256k1RecoverySignature2020#EcdsaSecp256k1RecoverySignature2020"
+      typeof="rdfs:Class">
+        <h3>EcdsaSecp256k1RecoverySignature2020</h3>
+        <p>
+        This class represents a linked data signature suite. See <a href="https://w3c-ccg.github.io/ld-cryptosuite-registry/#ecdsasecp256k1recoverysignature2020">ecdsasecp256k1recoverysignature2020</a>.
+        </p>
+        <dl>
+          <dt>Status</dt>
+          <dd property="vs:term_status">stable</dd>
+          <dt>Expected properties</dt>
+          <dd>type, created, verificationMethod, proofPurpose, jws</dd>
+        </dl>
+        <pre class="example prettyprint language-jsonld">
+{
+  "type": "EcdsaSecp256k1RecoverySignature2020",
+  "created": "2020-04-11T21:07:06Z",
+  "verificationMethod": "did:example:123#vm-3",
+  "proofPurpose": "assertionMethod",
+  "jws": "eyJhbGciOiJFUzI1NkstUiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..pp9eiLCMfN4EfSB3cbl3UxJ4TtgUaTfByDaaB6IZbXsnvIy5AUIFjbgaiFNtq9-3f8mP7foD_HXpjrdWZfzlwAE"
+}
+        </pre>
+      </section>
+
       <section id="EcdsaSecp256k1VerificationKey2019" about="https://w3id.org/security#EcdsaSecp256k1VerificationKey2019"
       typeof="rdfs:Class">
         <h3>EcdsaSecp256k1VerificationKey2019</h3>
@@ -197,6 +220,42 @@ until it is ratified as an official document via the World Wide Web Consortium.
 
 
 
+      <section id="EcdsaSecp256k1RecoveryMethod2020" about="https://identity.foundation/EcdsaSecp256k1RecoverySignature2020#EcdsaSecp256k1RecoveryMethod2020"
+      typeof="rdfs:Class">
+        <h3>EcdsaSecp256k1RecoveryMethod2020</h3>
+        <p>
+          This class represents a linked data signature verification key. See <a href="https://w3c-ccg.github.io/ld-cryptosuite-registry/#ecdsasecp256k1recoverymethod2020">ecdsasecp256k1recoverymethod2020</a>.
+          </p>
+          <dl>
+            <dt>Status</dt>
+            <dd property="vs:term_status">stable</dd>
+            <dt>Expected properties</dt>
+            <dd>id, type, controller</dd>
+          </dl>
+<pre class="example prettyprint language-jsonld" title="Example using publicKeyJwk">
+{
+  "id": "did:example:123#WqzaOweASs78whhl_YvCEvj1nd89IycryVlmZMefcjU",
+  "type": "EcdsaSecp256k1RecoveryMethod2020",
+  "controller": "did:example:123",
+  "publicKeyJwk": {
+    "crv": "secp256k1",
+    "x": "4xAbUxbGGFPv4qpHlPFAUJdzteUGR1lRK-CELCufU9w",
+    "y": "EYcgCTsff1qtZjI9_ckZTXDSKAIuM0BknrKgo0BZ_Is",
+    "kty": "EC",
+    "kid": "WqzaOweASs78whhl_YvCEvj1nd89IycryVlmZMefcjU"
+  }
+}
+          </pre>
+
+<pre class="example prettyprint language-jsonld" title="Example using blockchainAccountId">
+{
+  "id": "did:example:123#keys-1",
+  "type": "EcdsaSecp256k1RecoveryMethod2020",
+  "controller": "did:example:123",
+  "blockchainAccountId": "0x89a932207c485f85226d86f7cd486a89a24fcc12@eip155:1"
+}
+</pre>
+      </section>
 
 
       <section id="RsaSignature2018" about="https://w3id.org/security#RsaSignature2018"
