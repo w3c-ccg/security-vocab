@@ -2608,12 +2608,14 @@ a particular class of signatures:
                   </pre>
       </section>
 
-      <section id="x509CertificateThumbprint" about="https://w3id.org/security#x509CertificateFinger"
+      <section id="x509CertificateFingerprint" about="https://w3id.org/security#x509CertificateFingerprint"
       typeof="rdf:Property">
-        <h3>x509CertificateThumbprint</h3>
+        <h3>x509CertificateFingerprint</h3>
         <p>
-          The x509CertificateThumbprint property is used to associate an <a href="https://tools.ietf.org/html/rfc5280">X.509 Certificate</a> with a proof via its SHA-1 based thumbprint.
-          The value is encoded with <a href="https://tools.ietf.org/id/draft-multiformats-multibase-00.html">multibase</a> using the <a href="https://tools.ietf.org/id/draft-multiformats-multibase-00.html#rfc.appendix.D.1">base64pad</a> varient.
+          The x509CertificateFingerprint property is used to associate an <a href="https://tools.ietf.org/html/rfc5280">X.509 Certificate</a> with a proof via its fingerprint.
+          The value is a <a href="https://tools.ietf.org/id/draft-multiformats-multihash-00.html#rfc.appendix.B.1">multihash</a> encoded then <a href="https://tools.ietf.org/id/draft-multiformats-multibase-00.html">multibase</a> 
+          encoded value using the <a href="https://tools.ietf.org/id/draft-multiformats-multibase-00.html#rfc.appendix.D.1">base64pad</a> varient. It is RECOMMENDED that the fingerprint value be the SHA-1
+          hash of the X.509 Certificate.
                   </p>
                   <dl>
                     <dt>Status</dt>
@@ -2623,7 +2625,7 @@ a particular class of signatures:
                   </dl>
                   <p>
           The following example demonstrates how a proof is expressed using
-          a JSON-LD proof with a link to an associated <code>x509CertificateThumbprint</code>:
+          a JSON-LD proof with a link to an associated <code>x509CertificateFingerprint</code>:
                   </p>
                   <pre class="example prettyprint language-jsonld">
                     {
@@ -2631,7 +2633,7 @@ a particular class of signatures:
                       "proof": {
                         "type": "Ed25519Signature2018",
                         "created": "2020-04-03T18:03:33Z",
-                        "x509CertificateThumbprint": "egW8ixMpQ2W7SG46Y+ZzPkCUMjxmq7WIuMego9CZdhU=",
+                        "x509CertificateFingerprint": "egW8ixMpQ2W7SG46Y+ZzPkCUMjxmq7WIuMego9CZdhU=",
                         "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..ktzmVCTovhKWKxnMwDtMnmpUAUF1n7sqbdNmOV0TkxCTb2eHATO6iP7wqjyl_CMehHKnqgW6t9SW4q9TdbCxAg",
                         "proofPurpose": "assertionMethod",
                         "verificationMethod": "did:key:z6MkkUNcUWxAbxamK2Spp92mKWoXddS3tTqBKe8VTGExzX2Y#z6MkkUNcUWxAbxamK2Spp92mKWoXddS3tTqBKe8VTGExzX2Y"

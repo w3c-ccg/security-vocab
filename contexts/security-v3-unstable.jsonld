@@ -330,8 +330,8 @@
         "@id": "https://w3id.org/security#X509Certificate",
         "@type": "@list"
       },
-      "x509CertificateThumbprint": {
-        "@id": "https://w3id.org/security#x509CertificateThumbprint",
+      "x509CertificateFingerprint": {
+        "@id": "https://w3id.org/security#x509CertificateFingerprint",
         "@type": "https://w3id.org/security#multibase"
       }
     }
