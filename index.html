@@ -2564,7 +2564,7 @@ a particular class of signatures:
         <p>
           The x509CertificateChain property is used to associate a chain of <a href="https://tools.ietf.org/html/rfc5280">X.509 Certificates</a> with a proof. The value of this
           property is an ordered list where each value in the list is an <a href="https://tools.ietf.org/html/rfc5280">X.509 Certificate</a> expressed as a DER PKIX format, that is encoded using <a href="https://tools.ietf.org/id/draft-multiformats-multibase-00.html">multibase</a> 
-          using the base-64 varient. The certificate directly associated to the verification method used to verify the proof MUST be the first element in the list. Subsequent
+          using the <a href="https://tools.ietf.org/id/draft-multiformats-multibase-00.html#rfc.appendix.D.1">base64pad</a> varient. The certificate directly associated to the verification method used to verify the proof MUST be the first element in the list. Subsequent
           certificates in the list MAY be included where each one MUST certify the previous one.
                   </p>
                   <dl>
@@ -2613,7 +2613,7 @@ a particular class of signatures:
         <h3>x509CertificateThumbprint</h3>
         <p>
           The x509CertificateThumbprint property is used to associate an <a href="https://tools.ietf.org/html/rfc5280">X.509 Certificate</a> with a proof via its SHA-1 based thumbprint.
-          The value is encoded using <a href="https://tools.ietf.org/id/draft-multiformats-multibase-00.html">multibase</a> using the base-64 varient.
+          The value is encoded using <a href="https://tools.ietf.org/id/draft-multiformats-multibase-00.html">multibase</a> using the <a href="https://tools.ietf.org/id/draft-multiformats-multibase-00.html#rfc.appendix.D.1">base64pad</a> varient.
                   </p>
                   <dl>
                     <dt>Status</dt>
