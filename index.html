@@ -2558,11 +2558,14 @@ a particular class of signatures:
                   </pre>
       </section>
 
-      <section id="x509Certificate" about="https://w3id.org/security#x509Certificate"
+      <section id="x509CertificateChain" about="https://w3id.org/security#x509CertificateChain"
       typeof="rdf:Property">
-        <h3>x509Certificate</h3>
+        <h3>x509CertificateChain</h3>
         <p>
-          The x509Certificate property is used to associate an <a href="https://tools.ietf.org/html/rfc5280">X.509 Certificate</a> with a proof.
+          The x509CertificateChain property is used to associate a chain of <a href="https://tools.ietf.org/html/rfc5280">X.509 Certificates</a> with a proof. The value of this
+          property is an ordered list where each value in the list is an <a href="https://tools.ietf.org/html/rfc5280">X.509 Certificate</a> expressed as a DER PKIX format, that is encoded using <a href="https://tools.ietf.org/id/draft-multiformats-multibase-00.html">multibase</a> 
+          using the base-64 varient. The certificate directly associated to the verification method used to verify the proof MUST be the first element in the list. Subsequent
+          certificates in the list MAY be included where each one MUST certify the previous one.
                   </p>
                   <dl>
                     <dt>Status</dt>
@@ -2572,7 +2575,7 @@ a particular class of signatures:
                   </dl>
                   <p>
           The following example demonstrates how a proof is expressed using
-          a JSON-LD proof with a link to an associated <code>x509Certificate</code>:
+          a JSON-LD proof with a link to an associated <code>x509CertificateChain</code>:
                   </p>
                   <pre class="example prettyprint language-jsonld">
                     {
@@ -2580,7 +2583,7 @@ a particular class of signatures:
                       "proof": {
                         "type": "Ed25519Signature2018",
                         "created": "2020-04-03T18:03:33Z",
-                        "x509Certificate": "MIIC/jCCAeYCCQDqa4lnWhygnDANBgkqhkiG9w0BAQsFADBBMQswCQYDVQQGEwJT
+                        "x509CertificateChain": [ "MIIC/jCCAeYCCQDqa4lnWhygnDANBgkqhkiG9w0BAQsFADBBMQswCQYDVQQGEwJT
                         RTEQMA4GA1UECgwHSXNzdWVyIDEPMA0GA1UECwwGaXNzdWVyMQ8wDQYDVQQDDAZp
                         c3N1ZXIwHhcNMjEwNDE2MDMwMTUyWhcNMjQwMTExMDMwMTUyWjBBMQswCQYDVQQG
                         EwJTRTEQMA4GA1UECgwHSXNzdWVyIDEPMA0GA1UECwwGaXNzdWVyMQ8wDQYDVQQD
@@ -2596,7 +2599,7 @@ a particular class of signatures:
                         0Z+T3oJL1PCg01N6uL8KtooEmnUGzIzuZ2naokgwaiEOU2CCnJOCKYxz22cxqfNm
                         sGy1keqt6/bE64UnJRgETdqHzZTO0013ZtvDiwjGo3CZg4FBi/O722XnxbzuFIPZ
                         WWOOb9VaH+AE4lNei6i/CDY/WcgpP0GDIj3z6lCeLtiSagiQQPYxIz2sBxC1OKVU
-                        7CE=",
+                        7CE=" ],
                         "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..ktzmVCTovhKWKxnMwDtMnmpUAUF1n7sqbdNmOV0TkxCTb2eHATO6iP7wqjyl_CMehHKnqgW6t9SW4q9TdbCxAg",
                         "proofPurpose": "assertionMethod",
                         "verificationMethod": "did:key:z6MkkUNcUWxAbxamK2Spp92mKWoXddS3tTqBKe8VTGExzX2Y#z6MkkUNcUWxAbxamK2Spp92mKWoXddS3tTqBKe8VTGExzX2Y"
@@ -2605,11 +2608,12 @@ a particular class of signatures:
                   </pre>
       </section>
 
-      <section id="x509CertificateFingerprint" about="https://w3id.org/security#x509CertificateFinger"
+      <section id="x509CertificateThumbprint" about="https://w3id.org/security#x509CertificateFinger"
       typeof="rdf:Property">
-        <h3>x509CertificateFingerprint</h3>
+        <h3>x509CertificateThumbprint</h3>
         <p>
-          The x509CertificateFingerprint property is used to associate an <a href="https://tools.ietf.org/html/rfc5280">X.509 Certificate</a> with a proof via its SHA-256 based fingerprint.
+          The x509CertificateThumbprint property is used to associate an <a href="https://tools.ietf.org/html/rfc5280">X.509 Certificate</a> with a proof via its SHA-1 based thumbprint.
+          The value is encoded using <a href="https://tools.ietf.org/id/draft-multiformats-multibase-00.html">multibase</a> using the base-64 varient.
                   </p>
                   <dl>
                     <dt>Status</dt>
@@ -2619,7 +2623,7 @@ a particular class of signatures:
                   </dl>
                   <p>
           The following example demonstrates how a proof is expressed using
-          a JSON-LD proof with a link to an associated <code>x509CertificateFingerprint</code>:
+          a JSON-LD proof with a link to an associated <code>x509CertificateThumbprint</code>:
                   </p>
                   <pre class="example prettyprint language-jsonld">
                     {
@@ -2627,7 +2631,7 @@ a particular class of signatures:
                       "proof": {
                         "type": "Ed25519Signature2018",
                         "created": "2020-04-03T18:03:33Z",
-                        "x509CertificateFingerprint": "egW8ixMpQ2W7SG46Y+ZzPkCUMjxmq7WIuMego9CZdhU=",
+                        "x509CertificateThumbprint": "egW8ixMpQ2W7SG46Y+ZzPkCUMjxmq7WIuMego9CZdhU=",
                         "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..ktzmVCTovhKWKxnMwDtMnmpUAUF1n7sqbdNmOV0TkxCTb2eHATO6iP7wqjyl_CMehHKnqgW6t9SW4q9TdbCxAg",
                         "proofPurpose": "assertionMethod",
                         "verificationMethod": "did:key:z6MkkUNcUWxAbxamK2Spp92mKWoXddS3tTqBKe8VTGExzX2Y#z6MkkUNcUWxAbxamK2Spp92mKWoXddS3tTqBKe8VTGExzX2Y"
