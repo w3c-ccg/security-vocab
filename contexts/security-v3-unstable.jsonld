@@ -709,6 +709,7 @@
     "wrappedKey": "https://w3id.org/security#wrappedKey",
     "x509CertificateChain": {
       "@id": "https://w3id.org/security#X509Certificate",
+      "@type": "https://w3id.org/security#multibase",
       "@container": "@list"
     },
     "x509CertificateFingerprint": {
