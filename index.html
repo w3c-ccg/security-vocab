@@ -2564,7 +2564,7 @@ a particular class of signatures:
         <p>
           The x509CertificateChain property is used to associate a chain of <a href="https://tools.ietf.org/html/rfc5280">X.509 Certificates</a> with a proof. The value of this
           property is an ordered list where each value in the list is an <a href="https://tools.ietf.org/html/rfc5280">X.509 Certificate</a> expressed as a DER PKIX format, that is encoded with <a href="https://tools.ietf.org/id/draft-multiformats-multibase-00.html">multibase</a> 
-          using the <a href="https://tools.ietf.org/id/draft-multiformats-multibase-00.html#rfc.appendix.D.1">base64pad</a> varient. The certificate directly associated to the verification method used to verify the proof MUST be the first element in the list. Subsequent
+          using the <a href="https://tools.ietf.org/id/draft-multiformats-multibase-00.html#rfc.appendix.D.1">base64pad</a> variant. The certificate directly associated to the verification method used to verify the proof MUST be the first element in the list. Subsequent
           certificates in the list MAY be included where each one MUST certify the previous one.
                   </p>
                   <dl>
