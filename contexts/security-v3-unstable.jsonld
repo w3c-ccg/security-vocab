@@ -708,7 +708,7 @@
     "verifyData": "https://w3id.org/security#verifyData",
     "wrappedKey": "https://w3id.org/security#wrappedKey",
     "x509CertificateChain": {
-      "@id": "https://w3id.org/security#X509Certificate",
+      "@id": "https://w3id.org/security#x509CertificateChain",
       "@type": "https://w3id.org/security#multibase",
       "@container": "@list"
     },
