@@ -2558,6 +2558,90 @@ a particular class of signatures:
                   </pre>
       </section>
 
+      <section id="x509CertificateChain" about="https://w3id.org/security#x509CertificateChain"
+      typeof="rdf:Property">
+        <h3>x509CertificateChain</h3>
+        <p>
+          The x509CertificateChain property is used to associate a chain of <a href="https://tools.ietf.org/html/rfc5280">X.509 Certificates</a> with a proof. The value of this
+          property is an ordered list where each value in the list is an <a href="https://tools.ietf.org/html/rfc5280">X.509 Certificate</a> expressed as a DER PKIX format, that is encoded with <a href="https://tools.ietf.org/id/draft-multiformats-multibase-00.html">multibase</a> 
+          using the <a href="https://tools.ietf.org/id/draft-multiformats-multibase-00.html#rfc.appendix.D.1">base64pad</a> variant. The certificate directly associated to the verification method used to verify the proof MUST be the first element in the list. Subsequent
+          certificates in the list MAY be included where each one MUST certify the previous one.
+                  </p>
+                  <dl>
+                    <dt>Status</dt>
+                    <dd property="vs:term_status">unstable</dd>
+                    <dt>Range</dt>
+                    <dd>Signature</dd>
+                  </dl>
+                  <p>
+          The following example demonstrates how a proof is expressed using
+          a JSON-LD proof with a link to an associated <code>x509CertificateChain</code>:
+                  </p>
+                  <pre class="example prettyprint language-jsonld">
+                    {
+                      ...
+                      "proof": {
+                        "type": "Ed25519Signature2018",
+                        "created": "2020-04-03T18:03:33Z",
+                        "x509CertificateChain": [ "MIIC/jCCAeYCCQDqa4lnWhygnDANBgkqhkiG9w0BAQsFADBBMQswCQYDVQQGEwJT
+                        RTEQMA4GA1UECgwHSXNzdWVyIDEPMA0GA1UECwwGaXNzdWVyMQ8wDQYDVQQDDAZp
+                        c3N1ZXIwHhcNMjEwNDE2MDMwMTUyWhcNMjQwMTExMDMwMTUyWjBBMQswCQYDVQQG
+                        EwJTRTEQMA4GA1UECgwHSXNzdWVyIDEPMA0GA1UECwwGaXNzdWVyMQ8wDQYDVQQD
+                        DAZpc3N1ZXIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDYa1IJIrKr
+                        R5SHPfyOCWKuwcJHnDjTt+8cC7SLwtrfg3vazE+uRSP8cS7RitvMqK1YyC/pthJI
+                        zJlzF3OqcRQENjPfzQaD6J/55TWhwYfNj5IOVDCcZflfe+fgdl+N2mhrkIADqK3i
+                        Z5fOp5M2DN0m3XVhUllOHQ1dX6IRGCFrDV0ho2uOY+mmy3qIB3DRBLqd9pCN7ddr
+                        z+3uTRUYyuRiLdvvc7Myjq7CrNkiqr5yedMXwM9Bi3GVUIZ3L4MKgyCf7XZ0TMoX
+                        i4FVWbi4O1caKM0foglpRzGQM0IPgwQ/JR5u+rWaNx5XdowraWqU0LziznibvuFI
+                        HTpcQVmO0zNDAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAAJPFM32NBdAsGnuChQ9
+                        1A66HvVwQeC/r2wJFVj3jg7h7lTYjmaHKoRP3J5UGmHo8fTbIxyJPKoXZ3qoj31Y
+                        uBFKxNaNjSrPTOUv/4injvqjkdCvQdy0iuQaNtQJSkse4t/fnQ+DMC+E3cNii8Yj
+                        0Z+T3oJL1PCg01N6uL8KtooEmnUGzIzuZ2naokgwaiEOU2CCnJOCKYxz22cxqfNm
+                        sGy1keqt6/bE64UnJRgETdqHzZTO0013ZtvDiwjGo3CZg4FBi/O722XnxbzuFIPZ
+                        WWOOb9VaH+AE4lNei6i/CDY/WcgpP0GDIj3z6lCeLtiSagiQQPYxIz2sBxC1OKVU
+                        7CE=" ],
+                        "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..ktzmVCTovhKWKxnMwDtMnmpUAUF1n7sqbdNmOV0TkxCTb2eHATO6iP7wqjyl_CMehHKnqgW6t9SW4q9TdbCxAg",
+                        "proofPurpose": "assertionMethod",
+                        "verificationMethod": "did:key:z6MkkUNcUWxAbxamK2Spp92mKWoXddS3tTqBKe8VTGExzX2Y#z6MkkUNcUWxAbxamK2Spp92mKWoXddS3tTqBKe8VTGExzX2Y"
+                      }
+                    }
+                  </pre>
+      </section>
+
+      <section id="x509CertificateFingerprint" about="https://w3id.org/security#x509CertificateFingerprint"
+      typeof="rdf:Property">
+        <h3>x509CertificateFingerprint</h3>
+        <p>
+          The x509CertificateFingerprint property is used to associate an <a href="https://tools.ietf.org/html/rfc5280">X.509 Certificate</a> with a proof via its fingerprint.
+          The value is a <a href="https://tools.ietf.org/id/draft-multiformats-multihash-00.html#rfc.appendix.B.1">multihash</a> encoded then <a href="https://tools.ietf.org/id/draft-multiformats-multibase-00.html">multibase</a> 
+          encoded value using the <a href="https://tools.ietf.org/id/draft-multiformats-multibase-00.html#rfc.appendix.D.1">base64pad</a> variant. It is RECOMMENDED that the fingerprint value be the SHA-256
+          hash of the X.509 Certificate.
+                  </p>
+                  <dl>
+                    <dt>Status</dt>
+                    <dd property="vs:term_status">unstable</dd>
+                    <dt>Range</dt>
+                    <dd>Signature</dd>
+                  </dl>
+                  <p>
+          The following example demonstrates how a proof is expressed using
+          a JSON-LD proof with a link to an associated <code>x509CertificateFingerprint</code>:
+                  </p>
+                  <pre class="example prettyprint language-jsonld">
+                    {
+                      ...
+                      "proof": {
+                        "type": "Ed25519Signature2018",
+                        "created": "2020-04-03T18:03:33Z",
+                        "x509CertificateFingerprint": "MEiB6BbyLEylDZbtIbjpj5nM+QJQyPGartYi4x6Cj0Jl2FQ==",
+                        "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..ktzmVCTovhKWKxnMwDtMnmpUAUF1n7sqbdNmOV0TkxCTb2eHATO6iP7wqjyl_CMehHKnqgW6t9SW4q9TdbCxAg",
+                        "proofPurpose": "assertionMethod",
+                        "verificationMethod": "did:key:z6MkkUNcUWxAbxamK2Spp92mKWoXddS3tTqBKe8VTGExzX2Y#z6MkkUNcUWxAbxamK2Spp92mKWoXddS3tTqBKe8VTGExzX2Y"
+                      }
+                    }
+                  </pre>
+      </section>
+
       <section id="allowedAction" about="https://w3id.org/security#allowedAction"
       typeof="rdf:Property">
         <h3>allowedAction</h3>
