@@ -1965,6 +1965,11 @@ to the identity <code>did:example:123#WjKgJV7VRw3hmgU6--4v15c0Aewbcvat1BsRFTIqa5
       <section id="publicKeyBase58" about="https://w3id.org/security#publicKeyBase58"
       typeof="rdf:Property">
         <h3>publicKeyBase58</h3>
+        <p class="note" title="The publicKeyBase58 property is deprecated.">
+The `publicKeyBase58` property is deprecated. New cryptography suite creators
+and developers are advised to use the `publicKeyMultibase` property for
+encoding public key parameters.
+        </p>
         <p>
           A public key Base58 property is used to specify the base58-encoded version of the
           public key.
@@ -2060,6 +2065,11 @@ data that has been abbreviated for the sake of the readability of the example.
       <section id="publicKeyHex" about="https://w3id.org/security#publicKeyHex"
       typeof="rdf:Property">
         <h3>publicKeyHex</h3>
+        <p class="note" title="The publicKeyHex property is deprecated.">
+The `publicKeyHex` property is deprecated. New cryptography suite creators
+and developers are advised to use the `publicKeyMultibase` property for encoding
+public key parameters.
+        </p>
         <p>
 A <code>publicKeyHex</code> property is used to specify the hex-encoded version of the public key, based on <a href="https://tools.ietf.org/html/rfc4648#section-8">section 8 of rfc4648</a>. Hex encoding is also known as Base16 encoding.
         </p>
@@ -2083,6 +2093,36 @@ A <code>publicKeyHex</code> property is used to specify the hex-encoded version 
     "publicKeyHex":"027560AF3387D375E3342A6968179EF3C6D04F5D33B2B611CF326D4708BADD7770"
 }
         </pre>
+      </section>
+
+      <section id="publicKeyMultibase" about="https://w3id.org/security#publicKeyMultibase"
+      typeof="rdf:Property">
+        <h3>publicKeyMultibase</h3>
+        <p>
+An public key multibase property is used to specify the multibase-encoded
+version of the public key.
+                  </p>
+                  <dl>
+                    <dt>Status</dt>
+                    <dd property="vs:term_status">unstable</dd>
+                    <dt>Domain</dt>
+                    <dd>Key</dd>
+                    <dt>Range</dt>
+                    <dd>xsd:string</dd>
+                  </dl>
+                  <p>
+          The following example demonstrates the expression of a public key
+          in multibase format.
+                  </p>
+                  <pre class="example prettyprint language-jsonld">
+{
+  "id": "did:example:123#zH3C2AVvLMv6gmMNam3uVAjZpfkcJCwDwnZn6z3wXmqPV",
+  "type": "Ed25519VerificationKey2020",
+  "controller": "did:example:123",
+  "publicKeyMultibase": "zH3C2AVvLMv6gmMNam3uVAjZpfkcJCwDwnZn6z3wXmqPV"
+}
+                  </pre>
+
       </section>
 
       <section id="publicKeyService" about="https://w3id.org/security#publicKeyService"
