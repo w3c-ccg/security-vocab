@@ -2100,7 +2100,10 @@ A <code>publicKeyHex</code> property is used to specify the hex-encoded version 
         <h3>publicKeyMultibase</h3>
         <p>
 The public key multibase property is used to specify the multibase-encoded
-version of a public key.
+version of a public key. Each key type definition is expected to specify
+one or more required encoding bases. Specifying only a single encoding
+base per key type is preferable as it reduces the burden to reach broad
+interoperability.
                   </p>
                   <dl>
                     <dt>Status</dt>
