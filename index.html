@@ -69,7 +69,50 @@ companyURL: "https://mattr.global/"
           github: "https://github.com/w3c-ccg/security-vocab/",
 
           // extend the bibliography entries
-          //localBiblio: webpayments.localBiblio,
+          localBiblio: {
+            "ED25519-2020": {
+              title: "Ed25519 Signature 2020",
+              date: "November 2020",
+              href: "https://w3c-ccg.github.io/lds-ed25519-2020/",
+              authors: [
+                "Orie Steele"
+              ],
+              status: "Community Group Draft",
+              publisher: "W3C Credentials Community Group"
+            },
+            "LD-CRYPTOSUITE-REGISTRY": {
+              title: "The Linked Data Cryptosuite Registry",
+              date: "May 2021",
+              href: "https://w3c-ccg.github.io/ld-cryptosuite-registry/",
+              authors: [
+                "Manu Sporny",
+                "Orie Steele"
+              ],
+              status: "W3C Community Group Draft",
+              publisher: "W3C Credentials Community Group"
+            },
+            "MULTIBASE": {
+              title: "The Multibase Data Format",
+              date: "February 2021",
+              href: "https://datatracker.ietf.org/doc/html/draft-multiformats-multibase-03",
+              authors: [
+                "Manu Sporny"
+              ],
+              status: "Internet-Draft",
+              publisher: "IETF"
+            },
+            "MULTICODEC": {
+              title: "The Multicodec Data Format",
+              date: "May 2021",
+              href: "https://github.com/multiformats/multicodec/blob/master/table.csv",
+              authors: [
+                "Steven Allen",
+                "David Dias"
+              ],
+              status: "Draft",
+              publisher: "Protocol Labs"
+            }
+          },
 
           // name of the WG
           wg:       "Credentials Community Group",
@@ -2099,12 +2142,28 @@ A <code>publicKeyHex</code> property is used to specify the hex-encoded version 
       typeof="rdf:Property">
         <h3>publicKeyMultibase</h3>
         <p>
-The public key multibase property is used to specify the multibase-encoded
-version of a public key. Each key type definition is expected to specify
-one or more required encoding bases. Specifying only a single encoding
-base per key type is preferable as it reduces the burden to reach broad
+The public key multibase [[MULTIBASE]] property is used to specify the
+multibase-encoded version of a public key. The contents of the property
+are defined by specifications such as [[ED25519-2020]] and listed in the
+Linked Data Cryptosuite Registry [[LD-CRYPTOSUITE-REGISTRY]]. Most public key
+type definitions are expected to:
+        </p>
+
+        <ul>
+          <li>
+Specify only a single encoding base per public key type as it reduces
+implementation burden and increases the chances of reaching broad
 interoperability.
-                  </p>
+          </li>
+          <li>
+Specify a multicodec [[MULTICODEC]] header on the encoded public key to aid
+encoding and decoding applications in confirming that they are serializing and
+deserializing an expected public key type.
+          </li>
+          <li>
+Use compressed binary formats to ensure efficient key sizes.
+          </li>
+        </ul>
                   <dl>
                     <dt>Status</dt>
                     <dd property="vs:term_status">unstable</dd>
