@@ -1178,11 +1178,11 @@ decryption, or digitally signing data.
             <dt>Status</dt>
             <dd property="vs:term_status">stable</dd>
             <dt>Expected properties</dt>
-            <dd>owner, privateKeyPem, publicKeyPem</dd>
+            <dd>controller, privateKeyPem, publicKeyPem</dd>
           </dl>
         <p>
 The example below describes a cryptographic key that contains both the
-public and private key as well as the owner of the key. The owner property
+public and private key as well as the controller of the key. The controller property
 is described in the <a href="https://w3id.org/commerce">Commerce Vocabulary</a>.
         </p>
 <pre class="example prettyprint language-jsonld">
@@ -1190,7 +1190,7 @@ is described in the <a href="https://w3id.org/commerce">Commerce Vocabulary</a>.
   "@context": "https://w3id.org/security/v1",
   "@id": "https://payswarm.example.com/i/bob/keys/1",
   "@type": "Key",
-  "owner": "https://payswarm.example.com/i/bob",
+  "controller": "https://payswarm.example.com/i/bob",
   "privateKeyPem": "-----BEGIN PRIVATE KEY-----\nMIIBG0BA...OClDQAB\n-----END PRIVATE KEY-----\n",
   "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMII8YbF3s8q3c...j8Fk88FsRa3K\n-----END PUBLIC KEY-----\n"
 }
@@ -1561,7 +1561,7 @@ that expires on January 3rd 2014:
   "@type": "Key",
   "created": "2012-01-03T14:34:57+0000",
   "expires": "2014-01-03T14:34:57+0000",
-  "owner": "https://payswarm.example.com/i/bob",
+  "controller": "https://payswarm.example.com/i/bob",
   "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMII8YbF3s8q3c...j8Fk88FsRa3K\n-----END PUBLIC KEY-----\n"
 }
         </pre>
@@ -1702,14 +1702,14 @@ algorithm:
         </pre>
       </section>
 
-      <section id="owner" about="https://w3id.org/security#owner"
+      <section id="controller" about="https://w3id.org/security#controller"
         typeof="rdf:Property">
-        <h3>owner</h3>
+        <h3>controller</h3>
         <p>
-An owner is an entity that claims control over a particular resource. Note
-that ownership is best validated as a two-way relationship where the owner
-claims ownership over a particular resource, and the resource clearly
-identifies its owner.
+A controller is an entity that claims control over a particular resource. Note
+that control is best validated as a two-way relationship where the controller
+claims control over a particular resource, and the resource clearly
+identifies its controller.
         </p>
         <dl>
           <dt>Status</dt>
@@ -1719,16 +1719,16 @@ identifies its owner.
         </dl>
         <p>
 The example below shows a cryptographic key that is owned by an entity
-identified by a URL. Presumably, this key is under the control of the owner
+identified by a URL. Presumably, this key is under the control of the controller
 and can be used to infer that any digitally signed content using the key was
-signed by a software agent of the owner:
+signed by a software agent of the controller:
         </p>
         <pre class="example prettyprint language-jsonld">
 {
   "@context": "https://w3id.org/security/v1",
   "@id": "https://payswarm.example.com/i/bob/keys/1",
   "@type": "Key",
-  "owner": "https://payswarm.example.com/i/bob",
+  "controller": "https://payswarm.example.com/i/bob",
   "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMII8YbF3s8q3c...j8Fk88FsRa3K\n-----END PUBLIC KEY-----\n"
 }
         </pre>
@@ -1777,7 +1777,7 @@ that has been abbreviated for the sake of the readability of the example.
   "@context": "https://w3id.org/security/v1",
   "@id": "https://payswarm.example.com/i/bob/keys/1",
   "@type": "Key",
-  "owner": "https://payswarm.example.com/i/bob",
+  "controller": "https://payswarm.example.com/i/bob",
   "privateKeyPem": "-----BEGIN PRIVATE KEY-----\nMIIBG0BA...OClDQAB\n-----END PRIVATE KEY-----\n"
 }
         </pre>
@@ -1804,7 +1804,7 @@ that has been abbreviated for the sake of the readability of the example.
             "@context": "https://w3id.org/security/v1",
             "@id": "https://payswarm.example.com/i/bob/keys/1",
             "@type": "Key",
-            "owner": "https://payswarm.example.com/i/bob",
+            "controller": "https://payswarm.example.com/i/bob",
             "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMII8YbF3s8q3c...j8Fk88FsRa3K\n-----END PUBLIC KEY-----\n"
           }
                   </pre>
@@ -1832,7 +1832,7 @@ to the identity <code>https://payswarm.example.com/i/bob</code>.
   "@context": "https://w3id.org/security/v1",
   "@id": "https://payswarm.example.com/i/bob/keys/1",
   "@type": "Key",
-  "owner": "https://payswarm.example.com/i/bob",
+  "controller": "https://payswarm.example.com/i/bob",
   "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMII8YbF3s8q3c...j8Fk88FsRa3K\n-----END PUBLIC KEY-----\n"
 }
         </pre>
@@ -2180,7 +2180,7 @@ data that has been abbreviated for the sake of the readability of the example.
 {
   "@context": "https://w3id.org/security/v1",
   "@id": "https://payswarm.example.com/i/bob/keys/1",
-  "owner": "https://payswarm.example.com/i/bob",
+  "controller": "https://payswarm.example.com/i/bob",
   "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMII8YbF3s8q3c...j8Fk88FsRa3K\n-----END PUBLIC KEY-----\n"
 }
         </pre>
@@ -2322,7 +2322,7 @@ revoked on May 5th 2012:
   "@type": "Key",
   "created": "2012-01-03T14:34:57+0000",
   "revoked": "2012-05-01T18:11:19+0000",
-  "owner": "https://payswarm.example.com/i/bob",
+  "controller": "https://payswarm.example.com/i/bob",
   "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMII8YbF3s8q3c...j8Fk88FsRa3K\n-----END PUBLIC KEY-----\n"
 }
         </pre>
