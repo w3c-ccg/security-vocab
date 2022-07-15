@@ -1734,6 +1734,43 @@ signed by a software agent of the controller:
         </pre>
       </section>
 
+      <section id="owner" about="https://w3id.org/security#owner"
+        typeof="rdf:Property">
+        <h3>owner</h3>
+        <p class="note" title="The owner property is deprecated.">
+The `owner` property is deprecated. New cryptography suite creators
+and developers are advised to use the `controller` property for
+encoding public key parameters.
+        </p>
+        <p>
+An owner is an entity that claims control over a particular resource. Note
+that control is best validated as a two-way relationship where the owner
+claims control over a particular resource, and the resource clearly
+identifies its owner.
+        </p>
+        <dl>
+          <dt>Status</dt>
+          <dd property="vs:term_status">deprecated</dd>
+          <dt>Range</dt>
+          <dd>IRI</dd>
+        </dl>
+        <p>
+The example below shows a cryptographic key that is owned by an entity
+identified by a URL. Presumably, this key is under the control of the owner
+and can be used to infer that any digitally signed content using the key was
+signed by a software agent of the owner:
+        </p>
+        <pre class="example prettyprint language-jsonld">
+{
+  "@context": "https://w3id.org/security/v1",
+  "@id": "https://payswarm.example.com/i/bob/keys/1",
+  "@type": "Key",
+  "owner": "https://payswarm.example.com/i/bob",
+  "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMII8YbF3s8q3c...j8Fk88FsRa3K\n-----END PUBLIC KEY-----\n"
+}
+        </pre>
+      </section>
+
       <section id="password" about="https://w3id.org/security#password"
         typeof="rdf:Property">
         <h3>password</h3>
